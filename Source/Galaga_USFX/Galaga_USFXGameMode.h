@@ -6,6 +6,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "Galaga_USFXGameMode.generated.h"
 
+class AEnemy;
+
 UCLASS(MinimalAPI)
 class AGalaga_USFXGameMode : public AGameModeBase
 {
@@ -13,7 +15,8 @@ class AGalaga_USFXGameMode : public AGameModeBase
 
 public:
 	AGalaga_USFXGameMode();
+protected:
+	virtual void BeginPlay() override;
+public:
+	AEnemy* Enemy01;
 };
-
-
-
