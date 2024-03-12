@@ -21,7 +21,7 @@ private: \
 	static void StaticRegisterNativesAEnemy(); \
 	friend struct Z_Construct_UClass_AEnemy_Statics; \
 public: \
-	DECLARE_CLASS(AEnemy, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Galaga_USFX"), NO_API) \
+	DECLARE_CLASS(AEnemy, AActor, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Config), CASTCLASS_None, TEXT("/Script/Galaga_USFX"), NO_API) \
 	DECLARE_SERIALIZER(AEnemy)
 
 
@@ -30,14 +30,14 @@ private: \
 	static void StaticRegisterNativesAEnemy(); \
 	friend struct Z_Construct_UClass_AEnemy_Statics; \
 public: \
-	DECLARE_CLASS(AEnemy, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Galaga_USFX"), NO_API) \
+	DECLARE_CLASS(AEnemy, AActor, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Config), CASTCLASS_None, TEXT("/Script/Galaga_USFX"), NO_API) \
 	DECLARE_SERIALIZER(AEnemy)
 
 
 #define Galaga_USFX_Source_Galaga_USFX_Enemy_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AEnemy(const FObjectInitializer& ObjectInitializer); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEnemy) \
+	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEnemy) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AEnemy); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemy); \
 private: \
@@ -55,7 +55,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AEnemy); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemy); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEnemy)
+	DEFINE_ABSTRACT_DEFAULT_CONSTRUCTOR_CALL(AEnemy)
 
 
 #define Galaga_USFX_Source_Galaga_USFX_Enemy_h_14_PRIVATE_PROPERTY_OFFSET

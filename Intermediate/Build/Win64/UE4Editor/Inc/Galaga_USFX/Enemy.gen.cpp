@@ -46,8 +46,10 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemy_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "//Declarando la case Enemy como abstracta gracias al macro UCLASS.\n" },
 		{ "IncludePath", "Enemy.h" },
 		{ "ModuleRelativePath", "Enemy.h" },
+		{ "ToolTip", "Declarando la case Enemy como abstracta gracias al macro UCLASS." },
 	};
 #endif
 #if WITH_METADATA
@@ -77,7 +79,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_AEnemy_Statics::PropPointers),
 		0,
-		0x009000A4u,
+		0x009000A5u,
 		METADATA_PARAMS(Z_Construct_UClass_AEnemy_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemy_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_AEnemy()
@@ -89,7 +91,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemy, 3708543604);
+	IMPLEMENT_CLASS(AEnemy, 4125913031);
 	template<> GALAGA_USFX_API UClass* StaticClass<AEnemy>()
 	{
 		return AEnemy::StaticClass();
