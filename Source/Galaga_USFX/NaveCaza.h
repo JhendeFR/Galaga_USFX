@@ -22,4 +22,6 @@ public:
 protected:
 	virtual void Mover();
 	virtual void Ataque();
+	virtual void Vida();
+	virtual void Bombardear();
 };

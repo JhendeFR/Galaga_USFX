@@ -5,13 +5,17 @@
 
 ANaveCaza::ANaveCaza() {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
-	//// Create the mesh component
-	//mallaNaveEnemiga = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ANaveCaza::Mover() {
 
 }
 void ANaveCaza::Ataque() {
+
+}
+void ANaveCaza::Vida() {
+
+}
+void ANaveCaza::Bombardear() {
 
 }
