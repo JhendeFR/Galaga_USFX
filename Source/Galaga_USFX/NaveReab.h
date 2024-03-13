@@ -19,9 +19,9 @@ private:
 	bool estado_reabastecimiento;
 public:
 	ANaveReab();
-	FORCEINLINE float GetCapacidad_reabastecimiento() { return capacidad_reabastecimiento; }
-	FORCEINLINE float GetVelocidad_reabastecimiento() { return velocidad_reabastecimiento; }
-	FORCEINLINE bool GetEstado_reabastecimiento() { return estado_reabastecimiento; }
+	FORCEINLINE float GetCapacidad_reabastecimiento() const { return capacidad_reabastecimiento; }
+	FORCEINLINE float GetVelocidad_reabastecimiento() const { return velocidad_reabastecimiento; }
+	FORCEINLINE bool GetEstado_reabastecimiento() const { return estado_reabastecimiento; }
 
 	FORCEINLINE void SetCapacidad_reabastecimiento(float _capacidad_reabastecimiento) { capacidad_reabastecimiento = _capacidad_reabastecimiento; }
 	FORCEINLINE void SetVelocidad_reabastecimiento(float _velocidad_reabastecimiento) { velocidad_reabastecimiento = _velocidad_reabastecimiento; }
@@ -29,6 +29,5 @@ public:
 protected:
 	virtual void Mover();
 	virtual void Vida();
-	virtual void Ataque();
 	virtual void Reabastecer();
 };

@@ -25,3 +25,6 @@ void ANaveNodriza::Ocultar() {
 void ANaveNodriza::Descargar() {
 
 }
+void ANaveNodriza::Escudo() {
+
+}

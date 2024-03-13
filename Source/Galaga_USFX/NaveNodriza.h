@@ -20,6 +20,7 @@ private:
 	float capacidad;
 	bool transportando;
 	float tiempo_descarga;
+	float tiempo_escudo;
 
 public:
 	ANaveNodriza();
@@ -39,6 +40,9 @@ public:
 	FORCEINLINE void SetCapacidad(float _capacidad) { capacidad = _capacidad; }
 	FORCEINLINE void SetTransportando(bool _transportando) { transportando = _transportando; }
 	FORCEINLINE void SetTiempo_descarga(float _tiempo_descarga) { tiempo_descarga = _tiempo_descarga; }
+
+	FORCEINLINE float SetTiempo_escudo() const { return tiempo_escudo; }
+	FORCEINLINE void GetTiempo_escudo(float _tiempo_escudo) { tiempo_escudo = _tiempo_escudo; }
 protected:
 	virtual void Mover();
 	virtual void Vida();
@@ -46,4 +50,5 @@ protected:
 	virtual void Bombardear();
 	virtual void Ocultar();
 	virtual void Descargar();
+	virtual void Escudo();
 };

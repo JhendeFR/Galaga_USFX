@@ -13,9 +13,6 @@ void ANaveReab::Mover() {
 void ANaveReab::Vida() {
 
 }
-void ANaveReab::Ataque() {
-
-}
 void ANaveReab::Reabastecer() {
 
 }

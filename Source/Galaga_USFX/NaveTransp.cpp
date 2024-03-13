@@ -15,9 +15,6 @@ void ANaveTransp::Mover() {
 void ANaveTransp::Vida() {
 
 }
-void ANaveTransp::Ataque() {
-
-}
 void ANaveTransp::Descargar() {
 
 }
