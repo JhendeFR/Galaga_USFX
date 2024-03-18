@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeCazaGen01() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACazaGen01, 3827938313);
+	IMPLEMENT_CLASS(ACazaGen01, 2721065379);
 	template<> GALAGA_USFX_API UClass* StaticClass<ACazaGen01>()
 	{
 		return ACazaGen01::StaticClass();

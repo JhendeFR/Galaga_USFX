@@ -3,7 +3,7 @@
 
 #include "Enemy.h"
 
-// Sets default values
+// Iniciando una malla para la clase abstracta enemy.
 AEnemy::AEnemy()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -24,6 +24,7 @@ void AEnemy::BeginPlay()
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	//Mover(DeltaTime); Supuesta mente esto controla el tick frame de cada clase para el motor. (blablabla dijo el docemte molesto)
 
 }
 

@@ -3,21 +3,23 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "GameFramework/Actor.h" //Incluye la definicion de la clase AActor para que los objetos puedan ser colocados en UE.
 #include "Enemy.generated.h"
 
-class UstaticMeshComponent;
-//Declarando la case Enemy como abstracta gracias al macro UCLASS.
+class UstaticMeshComponent; //Definiendo la clase para generar un puntero (direccion de memoria).
+//Declarando la case Enemy como abstracta.
 UCLASS(abstract)
 class GALAGA_USFX_API AEnemy : public AActor
 {
 	GENERATED_BODY()
 
 public:
+	//UPPROPERTY es una Macro utilizada en UE para declarar propiedades de clases que pueden ser editadas en el motor grafico.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* EnemyMesh;
+	UStaticMeshComponent* EnemyMesh; //Asignamos a la Clase la propiedad 'EnemyMesh' como un puntero para asignar una representacion grafica a un objeto.
 	
 protected:
+	//Propiedades generales de la clase.
 	int ataque;
 	float cadencia;
 	int vida;
@@ -27,6 +29,7 @@ protected:
 	float destruir;
 	float escapar;
 public:
+	//Al ser propiedades protegidas es necesario crear metodos para poder leer (Get) y modificar (Set) las propiedades anteriores.
 	FORCEINLINE int Getataque() const { return ataque; }
 	FORCEINLINE float Getcadencia() const { return cadencia; }
 	FORCEINLINE int Getvida() const { return vida; }
@@ -46,21 +49,25 @@ public:
 	FORCEINLINE void Setescapar(float _escapar) { escapar = _escapar; }
 
 public:
-	// Sets default values for this actor's properties
-	AEnemy();
+	AEnemy(); //Este consturctor al no tener implementacion no hace mas de lo que haria el constructor de la clase 'AActor' (la clase base de 'AEnemy')
 
 protected:
-	// Called when the game starts or when spawned
+	//Con 'virtual' se indica que puede proporcionar su propia implementacion.
+	//Se utiliza Overeride para poder remplazar la implementacion base.
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	//Esta funcion se llama en cada fotograma del juego (Tick) y es un metodo heredado de la clase 'AActor'.
+	//Se introduce el dato 'DeltaTime' como el tiempo transcurrido desde el fotograma anterior.
 	virtual void Tick(float DeltaTime) override;
 
 protected:
+	//Declaración de métodos protegidos virtuales puros, esto indica que estos metodos no pueden se implementados por esta clase.
+	//Dichos metodos solo pueden ser implementados por las Subclases.
 	void Mover() PURE_VIRTUAL(AEnemy::Mover, );
 	void Disparar() PURE_VIRTUAL(AEnemy::Disparar, );
 	void Velocidad() PURE_VIRTUAL(AEnemy::Velocidad, );
 	void Vida() PURE_VIRTUAL(AEnemy::Vida, );
 	void Apariencia() PURE_VIRTUAL(AEnemy::Apariencia, );
+	void Destruir() PURE_VIRTUAL(AEnemy::Destruir, );
 };

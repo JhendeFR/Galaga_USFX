@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeTranspGen02() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATranspGen02, 2151443268);
+	IMPLEMENT_CLASS(ATranspGen02, 2322942103);
 	template<> GALAGA_USFX_API UClass* StaticClass<ATranspGen02>()
 	{
 		return ATranspGen02::StaticClass();

@@ -40,10 +40,12 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFXGameMode_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "//UCLASS es un Macro de que delara que la clase siguente podra ser manipulada por el motor grafico.\n//Se le pasa el parametro 'MinimalAPI' en referencia al nivel de acceso de la API.\n" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "Galaga_USFXGameMode.h" },
 		{ "ModuleRelativePath", "Galaga_USFXGameMode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
+		{ "ToolTip", "UCLASS es un Macro de que delara que la clase siguente podra ser manipulada por el motor grafico.\nSe le pasa el parametro 'MinimalAPI' en referencia al nivel de acceso de la API." },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFXGameMode_Statics::StaticCppClassTypeInfo = {
@@ -73,7 +75,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFXGameMode, 3460038334);
+	IMPLEMENT_CLASS(AGalaga_USFXGameMode, 1506120423);
 	template<> GALAGA_USFX_API UClass* StaticClass<AGalaga_USFXGameMode>()
 	{
 		return AGalaga_USFXGameMode::StaticClass();

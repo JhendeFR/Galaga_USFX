@@ -1092,3 +1092,5 @@ C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Wi
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\TranspGen01.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\TranspGen02.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\TranspGen02.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveNodriza.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveNodriza.generated.h

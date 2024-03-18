@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeEspiaGen02() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEspiaGen02, 164807746);
+	IMPLEMENT_CLASS(AEspiaGen02, 1892617248);
 	template<> GALAGA_USFX_API UClass* StaticClass<AEspiaGen02>()
 	{
 		return AEspiaGen02::StaticClass();

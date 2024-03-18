@@ -1,5 +1,5 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
-//Incluir las clases creadas.h
+//Incluir las clases necesarias.
 #include "Galaga_USFXGameMode.h"
 #include "Galaga_USFXPawn.h"
 #include "Enemy.h"
@@ -11,17 +11,22 @@
 #include "ReabGen02.h"
 #include "TranspGen01.h"
 #include "TranspGen02.h"
+#include "NaveNodriza.h"
+//Esta es la implementacion del constructor que define la instancia inicial de la clase 'AGalaga_USFXPawn' para establecer un conportamiento preterminado.
+//El constructor se llama automaticamente al crear un objeto de la clase.
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 {
-	// set default pawn class to our character class
 	DefaultPawnClass = AGalaga_USFXPawn::StaticClass();
-	//Enemy01 = nullptr; Al definir a 'Enemy' como abstracta ya no necesitamos generar esta nave en el escenario.
 }
 
+
+
+//La clase implementa la funcion BeginPlay.
+//BeginPlay se llama al comienzo del juego y es donde se colocan las inicializaciones y configuraciones iniciales del juego.
 void AGalaga_USFXGameMode::BeginPlay()
 {
-	Super::BeginPlay();
-	//Poner la ubicacion de las naves a generar en el word(rotator dejarlo 0,0,0).
+	Super::BeginPlay(); //Llama al metodo BeginPlay y se usar el 'Super' porque este es un metodo de AGameModeBase.
+	//Definimos las posiciones iniciales para las naves a spawnear.
 	FVector ubicacionNave01 = FVector(-1000.0f, 500.0f, 250.0f);
 	FVector ubicacionNave02 = FVector(-900.0f, 400.0f, 250.0f);
 
@@ -35,13 +40,13 @@ void AGalaga_USFXGameMode::BeginPlay()
 	FVector ubicacionNave08 = FVector(-300.0f, -200.0f, 250.0f);
 
 	FVector ubicacionNave09 = FVector(-200.0f, -300.0f, 250.0f);
-
+	//No tocaremos la rotacion porque no nos interesa por ahora la rotacion de los objetos.
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
-	UWorld* const World = GetWorld();
-	if (World != nullptr)
+	UWorld* const World = GetWorld(); //Estamos obteniendo una direccion (puntero) de la clase UWorld (Escenario del juego).
+	if (World != nullptr) //Verificamos si el puntero obtenido es valido.
 	{
-		//este es el spawn de las naves
+		//En los punteros creados en el encabezado (.h) almacenamos el Spawn de las respectivas clases con las ubicaciones asignadas anteriormente.
 		CazaGen01 = World->SpawnActor<ACazaGen01>(ubicacionNave01, rotacionNave);
 		CazaGen02 = World->SpawnActor<ACazaGen02>(ubicacionNave02, rotacionNave);
 		EspiaGen01 = World->SpawnActor<AEspiaGen01>(ubicacionNave03, rotacionNave);
@@ -50,15 +55,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 		ReabGen02 = World->SpawnActor<AReabGen02>(ubicacionNave06, rotacionNave);
 		TranspGen01 = World->SpawnActor<ATranspGen01>(ubicacionNave07, rotacionNave);
 		TranspGen02 = World->SpawnActor<ATranspGen02>(ubicacionNave08, rotacionNave);
+		NaveNodriza = World->SpawnActor<ANaveNodriza>(ubicacionNave09, rotacionNave);
 
 	}
-	//Asignamos las posiciones a las naves
-	CazaGen01->Setposicion(FVector(500.0f, 500.0f, 200.0f));
-	CazaGen02->Setposicion(FVector(500.0f, 500.0f, 200.0f));
-	EspiaGen01->Setposicion(FVector(500.0f, 500.0f, 200.0f));
-	EspiaGen02->Setposicion(FVector(500.0f, 500.0f, 200.0f));
-	ReabGen01->Setposicion(FVector(500.0f, 500.0f, 200.0f));
-	ReabGen02->Setposicion(FVector(500.0f, 500.0f, 200.0f));
-	TranspGen01->Setposicion(FVector(500.0f, 500.0f, 200.0f));
-	TranspGen02->Setposicion(FVector(500.0f, 500.0f, 200.0f));
 }

@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveTransp() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveTransp, 3110420088);
+	IMPLEMENT_CLASS(ANaveTransp, 1979537702);
 	template<> GALAGA_USFX_API UClass* StaticClass<ANaveTransp>()
 	{
 		return ANaveTransp::StaticClass();

@@ -46,18 +46,20 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemy_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "//Declarando la case Enemy como abstracta gracias al macro UCLASS.\n" },
+		{ "Comment", "//Definiendo la clase para generar un puntero (direccion de memoria).\n//Declarando la case Enemy como abstracta.\n" },
 		{ "IncludePath", "Enemy.h" },
 		{ "ModuleRelativePath", "Enemy.h" },
-		{ "ToolTip", "Declarando la case Enemy como abstracta gracias al macro UCLASS." },
+		{ "ToolTip", "Definiendo la clase para generar un puntero (direccion de memoria).\nDeclarando la case Enemy como abstracta." },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemy_Statics::NewProp_EnemyMesh_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Projectile" },
+		{ "Comment", "//UPPROPERTY es una Macro utilizada en UE para declarar propiedades de clases que pueden ser editadas en el motor grafico.\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Enemy.h" },
+		{ "ToolTip", "UPPROPERTY es una Macro utilizada en UE para declarar propiedades de clases que pueden ser editadas en el motor grafico." },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemy_Statics::NewProp_EnemyMesh = { "EnemyMesh", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemy, EnemyMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemy_Statics::NewProp_EnemyMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemy_Statics::NewProp_EnemyMesh_MetaData)) };
@@ -91,7 +93,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemy, 4125913031);
+	IMPLEMENT_CLASS(AEnemy, 885159267);
 	template<> GALAGA_USFX_API UClass* StaticClass<AEnemy>()
 	{
 		return AEnemy::StaticClass();

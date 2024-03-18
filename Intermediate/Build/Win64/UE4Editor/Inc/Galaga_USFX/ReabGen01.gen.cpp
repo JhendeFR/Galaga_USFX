@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeReabGen01() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AReabGen01, 2411992099);
+	IMPLEMENT_CLASS(AReabGen01, 3323737749);
 	template<> GALAGA_USFX_API UClass* StaticClass<AReabGen01>()
 	{
 		return AReabGen01::StaticClass();
