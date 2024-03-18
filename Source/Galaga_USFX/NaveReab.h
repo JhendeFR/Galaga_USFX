@@ -27,7 +27,9 @@ public:
 	FORCEINLINE void SetVelocidad_reabastecimiento(float _velocidad_reabastecimiento) { velocidad_reabastecimiento = _velocidad_reabastecimiento; }
 	FORCEINLINE void SetEstado_reabastecimiento(bool _estado_reabastecimiento) { estado_reabastecimiento = _estado_reabastecimiento; }
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Vida();
 	virtual void Reabastecer();
+public:
+	virtual void Tick(float DeltaTime) override;
 };

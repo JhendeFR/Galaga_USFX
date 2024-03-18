@@ -27,7 +27,9 @@ public:
 	FORCEINLINE void SetTransportando(bool _transportando) { transportando = _transportando; }
 	FORCEINLINE void SetTiempo_descarga(float _tiempo_descarga) { tiempo_descarga = _tiempo_descarga; }
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Vida();
 	virtual void Descargar();
+public:
+	virtual void Tick(float DeltaTime) override;
 };

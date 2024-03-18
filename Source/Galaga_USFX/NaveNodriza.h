@@ -44,11 +44,13 @@ public:
 	FORCEINLINE float SetTiempo_escudo() const { return tiempo_escudo; }
 	FORCEINLINE void GetTiempo_escudo(float _tiempo_escudo) { tiempo_escudo = _tiempo_escudo; }
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Vida();
 	virtual void Ataque();
 	virtual void Bombardear();
 	virtual void Ocultar();
 	virtual void Descargar();
 	virtual void Escudo();
+public:
+	virtual void Tick(float DeltaTime) override;
 };

@@ -25,5 +25,7 @@ protected:
 	virtual void Vida();
 	virtual void Bombardear();
 public:
+	//En este caso 'virtual' nos indica que esta funcion puede ser sobreescrita por una subclase.
+	//Mientras que 'override' asegura que estemos sobreescribiendo una funcion de la clase base.
 	virtual void Tick(float DeltaTime) override;
 };

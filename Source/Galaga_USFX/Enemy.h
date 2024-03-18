@@ -64,7 +64,7 @@ public:
 protected:
 	//Declaración de métodos protegidos virtuales puros, esto indica que estos metodos no pueden se implementados por esta clase.
 	//Dichos metodos solo pueden ser implementados por las Subclases.
-	void Mover() PURE_VIRTUAL(AEnemy::Mover, );
+	void Mover(float DeltaTime) PURE_VIRTUAL(AEnemy::Mover, );//Se le pasa el parametro entero DeltaTime para poder calcular el tiempo entre fotogramas.
 	void Disparar() PURE_VIRTUAL(AEnemy::Disparar, );
 	void Velocidad() PURE_VIRTUAL(AEnemy::Velocidad, );
 	void Vida() PURE_VIRTUAL(AEnemy::Vida, );

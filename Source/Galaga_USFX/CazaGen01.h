@@ -20,6 +20,7 @@ public:
 	FORCEINLINE float SetTiempo_escudo() const { return tiempo_escudo; }
 	FORCEINLINE void GetTiempo_escudo(float _tiempo_escudo) { tiempo_escudo = _tiempo_escudo; }
 protected:
+	//Se le pondra override ? XD.
 	virtual void Mover();
 	virtual void Ataque();
 	virtual void Vida();
