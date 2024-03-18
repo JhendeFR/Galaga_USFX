@@ -20,8 +20,10 @@ public:
 	FORCEINLINE int GetnumBombas() const { return numBombas; }
 	FORCEINLINE void SetnumBombas(int _numBombas) { numBombas = _numBombas; }
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);//Se le pasa el parametro entero DeltaTime para poder calcular el tiempo entre fotogramas.
 	virtual void Ataque();
 	virtual void Vida();
 	virtual void Bombardear();
+public:
+	virtual void Tick(float DeltaTime) override;
 };

@@ -13,18 +13,16 @@ AEnemy::AEnemy()
 	RootComponent = EnemyMesh;
 }
 
-// Called when the game starts or when spawned
+// Esta funcion se llama al comienzo del juego y es donde se colocan las inicializaciones y configuraciones iniciales del juego.
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+// Esta funcion permite comprobar cada frame el estado actual del objeto.
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	//Mover(DeltaTime); Supuesta mente esto controla el tick frame de cada clase para el motor. (blablabla dijo el docemte molesto)
-
 }
 
