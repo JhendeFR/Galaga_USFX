@@ -21,9 +21,11 @@ public:
 	
 	FORCEINLINE void SetMultiplicadorBonus(int _multiplicadorbonus) { multiplicadorbonus = _multiplicadorbonus; }
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Vida();
 	virtual void Ataque();
 	virtual void Ocultar();
 	virtual void Cadenciaplus();
+public:
+	virtual void Tick(float DeltaTime) override;
 };

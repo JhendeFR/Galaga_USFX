@@ -24,7 +24,9 @@ public:
 	FORCEINLINE void SetCapacidad(float _capacidad) { capacidad = _capacidad; }
 	FORCEINLINE void  SetCapacidad(FVector _tipoNaveGen01) { tipoNaveGen01 = _tipoNaveGen01; }
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Vida();
 	virtual void Descargar();
+public:
+	virtual void Tick(float DeltaTime) override;
 };

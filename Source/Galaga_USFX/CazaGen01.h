@@ -21,9 +21,11 @@ public:
 	FORCEINLINE void GetTiempo_escudo(float _tiempo_escudo) { tiempo_escudo = _tiempo_escudo; }
 protected:
 	//Se le pondra override ? XD.
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Ataque();
 	virtual void Vida();
 	virtual void Bombardear();
 	virtual void Escudo();
+public:
+	virtual void Tick(float DeltaTime) override;
 };

@@ -21,7 +21,9 @@ public:
 
 	FORCEINLINE void SetPorcentaje_reab(float _porcentaje_reab) { porcentaje_reab = _porcentaje_reab; }
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Vida();
 	virtual void Reabastecer();
+public:
+	virtual void Tick(float DeltaTime) override;
 };
