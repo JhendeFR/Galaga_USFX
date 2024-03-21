@@ -8,11 +8,9 @@ ACazaGen01::ACazaGen01() {
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ACazaGen01::Mover(float DeltaTime) { 
-	FVector PActual = GetActorLocation();
-	float NewX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	float NewY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	FVector PFinal = FVector(PActual.X + NewX, PActual.Y + NewY, PActual.Z);
-	SetActorLocation(PFinal);
+	velocidad = 0.25;//Establecemos la velocidad ya heredada de la clase 'AEnemy' abstracta.
+	//SetActorLoacation y GetActorLocation son metodos usador por UE para con Set obtener y con Get establecer la posicion de un objeto.
+	SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
 }
 void ACazaGen01::Ataque() {
 

@@ -8,11 +8,10 @@ AEspiaGen01::AEspiaGen01() {
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void AEspiaGen01::Mover(float DeltaTime) {
-	FVector PActual = GetActorLocation();
-	float NewX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	float NewY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	FVector PFinal = FVector(PActual.X + NewX, PActual.Y + NewY, PActual.Z);
-	SetActorLocation(PFinal);
+	velocidad = 0.25;
+	//Movimiento Diagonal Arriba-Derecha.
+	SetActorLocation(GetActorLocation() + FVector(velocidad, velocidad, 0.0f));
+
 }
 void AEspiaGen01::Vida() {
 

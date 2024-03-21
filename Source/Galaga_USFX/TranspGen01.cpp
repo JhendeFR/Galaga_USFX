@@ -8,11 +8,13 @@ ATranspGen01::ATranspGen01() {
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ATranspGen01::Mover(float DeltaTime) {
-	FVector PActual = GetActorLocation();
-	float NewX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	float NewY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	FVector PFinal = FVector(PActual.X + NewX, PActual.Y + NewY, PActual.Z);
-	SetActorLocation(PFinal);
+	velocidad = 0.25;
+	//Movimiento Circular.
+	float Radio = 100.0f;
+	float Angulo = GetWorld()->GetTimeSeconds() * velocidad;
+	FVector NuevaPosicion = FVector(FMath::Cos(Angulo), FMath::Sin(Angulo), 0.0f) * Radio;
+	SetActorLocation(NuevaPosicion);
+
 }
 void ATranspGen01::Vida() {
 

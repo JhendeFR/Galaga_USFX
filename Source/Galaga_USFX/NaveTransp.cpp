@@ -10,11 +10,8 @@ ANaveTransp::ANaveTransp() {
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ANaveTransp::Mover(float DeltaTime) {
-    FVector PActual = GetActorLocation();
-    float NewX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-    float NewY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-    FVector PFinal = FVector(PActual.X + NewX, PActual.Y + NewY, PActual.Z);
-    SetActorLocation(PFinal);
+    velocidad = 0.25;
+    SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
 }
 void ANaveTransp::Vida() {
 

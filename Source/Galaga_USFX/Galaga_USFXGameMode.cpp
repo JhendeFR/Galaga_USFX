@@ -34,7 +34,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 	TMap<TSubclassOf<AEnemy>, int> MaxNav;//TSubclassOf para asegurarse que podamos asignar subclases especificas solo de 'Enemy'.
 
 	//Añadimos las clases de naves al Array.
-	//Recordemos que al añadir pasamos las subclases y el medodo 'StaticClass' para obtener su clase (UClass) en le aejecucion.
+	//Recordemos que al añadir pasamos las subclases y el medodo 'StaticClass' para obtener su clase (UClass) en le ejecucion.
 	//UClass nos sirve para crear, acceder y manipular a las propiedades y metodos de las clases en UE con C++ y Blueprints.
 	TipoNaves.Add(ANaveCaza::StaticClass());
 	TipoNaves.Add(ACazaGen01::StaticClass());

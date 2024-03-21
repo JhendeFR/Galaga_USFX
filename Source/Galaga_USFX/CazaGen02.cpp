@@ -8,11 +8,10 @@ ACazaGen02::ACazaGen02() {
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ACazaGen02::Mover(float DeltaTime) {
-	FVector PActual = GetActorLocation();
-	float NewX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	float NewY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	FVector PFinal = FVector(PActual.X + NewX, PActual.Y + NewY, PActual.Z);
-	SetActorLocation(PFinal);
+	velocidad = 0.25;
+	//Movimiento Diagonal Arriba-Izquierda.
+	SetActorLocation(GetActorLocation() + FVector(-velocidad, velocidad, 0.0f));
+
 }
 void ACazaGen02::Ataque() {
 

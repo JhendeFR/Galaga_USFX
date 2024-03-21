@@ -8,11 +8,11 @@ ANaveNodriza::ANaveNodriza() {
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ANaveNodriza::Mover(float DeltaTime) {
-	FVector PActual = GetActorLocation();
-	float NewX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	float NewY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime * velocidad;
-	FVector PFinal = FVector(PActual.X + NewX, PActual.Y + NewY, PActual.Z);
-	SetActorLocation(PFinal);
+	velocidad = 0.25;
+	static float TiempoInicio = GetWorld()->GetTimeSeconds();
+	float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
+	SetActorLocation(GetActorLocation() + FVector(DesplazamientoHorizontal, 0.0f, 0.0f));
+
 }
 void ANaveNodriza::Vida() {
 
