@@ -64,6 +64,10 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXPawn() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FireSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EscudoDist_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_EscudoDist;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -150,6 +154,13 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXPawn() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_FireSound = { "FireSound", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFXPawn, FireSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_FireSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_FireSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_EscudoDist_MetaData[] = {
+		{ "Category", "Gameplay" },
+		{ "ModuleRelativePath", "Galaga_USFXPawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_EscudoDist = { "EscudoDist", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFXPawn, EscudoDist), METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_EscudoDist_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_EscudoDist_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGalaga_USFXPawn_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_ShipMeshComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_CameraComponent,
@@ -158,6 +169,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXPawn() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_FireRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_MoveSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_FireSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXPawn_Statics::NewProp_EscudoDist,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFXPawn_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGalaga_USFXPawn>::IsAbstract,
@@ -186,7 +198,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXPawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFXPawn, 682241231);
+	IMPLEMENT_CLASS(AGalaga_USFXPawn, 2262990154);
 	template<> GALAGA_USFX_API UClass* StaticClass<AGalaga_USFXPawn>()
 	{
 		return AGalaga_USFXPawn::StaticClass();

@@ -12,6 +12,8 @@
 #include "Engine/StaticMesh.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
+#include "EscudoM.h"
+
 
 const FName AGalaga_USFXPawn::MoveForwardBinding("MoveForward");
 const FName AGalaga_USFXPawn::MoveRightBinding("MoveRight");
@@ -20,6 +22,7 @@ const FName AGalaga_USFXPawn::FireRightBinding("FireRight");
 
 AGalaga_USFXPawn::AGalaga_USFXPawn()
 {	
+
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO"));
 	// Create the mesh component
 	ShipMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
@@ -50,6 +53,7 @@ AGalaga_USFXPawn::AGalaga_USFXPawn()
 	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+	EscudoDist = 100.0f;
 }
 
 void AGalaga_USFXPawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -136,4 +140,21 @@ void AGalaga_USFXPawn::ShotTimerExpired()
 {
 	bCanFire = true;
 }
+void AGalaga_USFXPawn::SpawnShield()
+{
+	// Calcular la posición delante del 'Pawn'
+	FVector SpawnLocation = GetActorLocation() + GetActorForwardVector() * EscudoDist;
 
+	// Crear una instancia del escudo en la posición calculada
+	AEscudoM* Escudo = GetWorld()->SpawnActor<AEscudoM>(AEscudoM::StaticClass(), SpawnLocation, GetActorRotation());
+
+	// Comenzar un temporizador para que se vuelva a crear el escudo después de 10 segundos
+	GetWorld()->GetTimerManager().SetTimer(ShieldTimerHandle, this, &AGalaga_USFXPawn::SpawnShield, 10.0f, false);
+}
+void AGalaga_USFXPawn::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Llamar a SpawnShield para crear el primer escudo
+	SpawnShield();
+}

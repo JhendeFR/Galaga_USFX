@@ -66,10 +66,10 @@ void AGalaga_USFXGameMode::BeginPlay()
 	MaxNav.Add(AReabGen02::StaticClass(), 5);
 	MaxNav.Add(ANaveNodriza::StaticClass(), 1);
 
-
+	/*FString DatosMapa = ListarTmap(MaxNav);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, DatosMapa);*/
 
 	FVector UIniNaves = FVector(0.0f, -1000.0f, 250.0f);
-
 	//No tocaremos la rotacion porque no nos interesa por ahora la rotacion de los objetos.
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
@@ -96,4 +96,16 @@ void AGalaga_USFXGameMode::BeginPlay()
 			}
 		}
 	}
+}
+FString ListarTmap(const TMap<FString, int>& Mapa) {
+	FString Resultado;
+	for (const TPair<FString, int>& Elemento : Mapa) {
+		FString Llave = Elemento.Key;
+		int Valor = Elemento.Value;
+		Resultado += FString::Printf(TEXT("Llave: %s, Valor: %d\n"), *Llave, Valor);
+	}
+	return Resultado;
+}
+void EliminarTmap(TMap<FString, int>& Mapa, const FString& Llave) {
+	Mapa.Remove(Llave);
 }

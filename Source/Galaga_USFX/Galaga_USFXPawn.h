@@ -11,6 +11,7 @@ class AGalaga_USFXPawn : public APawn
 {
 	GENERATED_BODY()
 
+
 	/* The mesh component */
 	UPROPERTY(Category = Mesh, VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UStaticMeshComponent* ShipMeshComponent;
@@ -22,7 +23,6 @@ class AGalaga_USFXPawn : public APawn
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(Category = Camera, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
-
 public:
 	AGalaga_USFXPawn();
 
@@ -74,5 +74,13 @@ public:
 	FORCEINLINE class UCameraComponent* GetCameraComponent() const { return CameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+protected:
+	//Con 'virtual' se indica que puede proporcionar su propia implementacion.
+	//Se utiliza Overeride para poder remplazar la implementacion base.
+	virtual void BeginPlay() override;
+	void SpawnShield();
+private:
+	UPROPERTY(EditAnywhere, Category = "Gameplay")
+	float EscudoDist; // Definir la variable DistanciaDelante
+	FTimerHandle ShieldTimerHandle;
 };
-

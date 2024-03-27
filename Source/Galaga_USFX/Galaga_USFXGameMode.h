@@ -38,6 +38,7 @@ protected:
 	//BeginPlay es un Metodo de la clase 'AGameModeBase' y heredado por la clase 'AActor'.
 	virtual void BeginPlay() override;
 public:
+	//Almacena los punteros de las naves en un TArray.
 	TArray<AEnemy*> Enemigos;
 	TArray<ANaveCaza*> NavesCaza;
 	TArray<ACazaGen01*> CazaGen01;

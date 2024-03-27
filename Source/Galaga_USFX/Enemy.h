@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h" //Incluye la definicion de la clase AActor para que los objetos puedan ser colocados en UE.
 #include "Enemy.generated.h"
-
 class UstaticMeshComponent; //Definiendo la clase para generar un puntero (direccion de memoria).
 //Declarando la case Enemy como abstracta.
 UCLASS(abstract)
