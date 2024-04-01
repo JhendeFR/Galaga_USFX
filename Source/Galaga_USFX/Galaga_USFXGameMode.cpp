@@ -85,7 +85,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 				//Verificamos si el Tmap tiene la llave (TipoNavAlea) que recordemos que es una subclase especifica de 'Enemy'.
 				//Contains es un metodo que se llama en un TMap para verificar si contiene una clave específica (TipoNavAlea).
 				if (MaxNav.Contains(TipoNavAlea)) {
-					int NavesGeneradas = MaxNav[TipoNavAlea];//Asignanos la nave aleatoria como un entero a la variable 'NavesGeneradas'.
+					int NavesGeneradas = MaxNav[TipoNavAlea];//Asignamos a la varible el valor del TMap correspondiente a la llave.
 					if (NavesGeneradas > 0) {
 						FVector PActualNaves = FVector(UIniNaves.X + i * 150, UIniNaves.Y + j * 105, UIniNaves.Z);//Esto solo controla la distancia entre las naves
 						AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, rotacionNave);//Esto spawnea las naves en el mundo.
@@ -96,16 +96,4 @@ void AGalaga_USFXGameMode::BeginPlay()
 			}
 		}
 	}
-}
-FString ListarTmap(const TMap<FString, int>& Mapa) {
-	FString Resultado;
-	for (const TPair<FString, int>& Elemento : Mapa) {
-		FString Llave = Elemento.Key;
-		int Valor = Elemento.Value;
-		Resultado += FString::Printf(TEXT("Llave: %s, Valor: %d\n"), *Llave, Valor);
-	}
-	return Resultado;
-}
-void EliminarTmap(TMap<FString, int>& Mapa, const FString& Llave) {
-	Mapa.Remove(Llave);
 }

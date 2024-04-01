@@ -143,18 +143,22 @@ void AGalaga_USFXPawn::ShotTimerExpired()
 void AGalaga_USFXPawn::SpawnShield()
 {
 	// Calcular la posición delante del 'Pawn'
-	FVector SpawnLocation = GetActorLocation() + GetActorForwardVector() * EscudoDist;
+	FVector SpawnEsc = GetActorLocation() + GetActorForwardVector() * EscudoDist;
 
 	// Crear una instancia del escudo en la posición calculada
-	AEscudoM* Escudo = GetWorld()->SpawnActor<AEscudoM>(AEscudoM::StaticClass(), SpawnLocation, GetActorRotation());
-
-	// Comenzar un temporizador para que se vuelva a crear el escudo después de 10 segundos
-	GetWorld()->GetTimerManager().SetTimer(ShieldTimerHandle, this, &AGalaga_USFXPawn::SpawnShield, 10.0f, false);
+	AEscudoM* Escudo = GetWorld()->SpawnActor<AEscudoM>(AEscudoM::StaticClass(), SpawnEsc, GetActorRotation());
+	GetWorld()->GetTimerManager().SetTimer(ShieldActivar, this, &AGalaga_USFXPawn::SpawnShield, 10.0f, false);
+	GetWorld()->GetTimerManager().SetTimer(ShieldDesactivar, [Escudo]()
+		{
+			if (Escudo)
+			{
+				Escudo->Destroy();
+			}
+		}, 6.0f, false);
 }
 void AGalaga_USFXPawn::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// Llamar a SpawnShield para crear el primer escudo
+	// Llamar a la función SpawnShield al inicio del juego.
 	SpawnShield();
 }

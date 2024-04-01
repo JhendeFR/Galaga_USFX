@@ -74,13 +74,15 @@ public:
 	FORCEINLINE class UCameraComponent* GetCameraComponent() const { return CameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-protected:
+public:
 	//Con 'virtual' se indica que puede proporcionar su propia implementacion.
 	//Se utiliza Overeride para poder remplazar la implementacion base.
 	virtual void BeginPlay() override;
 	void SpawnShield();
 private:
 	UPROPERTY(EditAnywhere, Category = "Gameplay")
-	float EscudoDist; // Definir la variable DistanciaDelante
-	FTimerHandle ShieldTimerHandle;
+	float EscudoDist; //Distancia del escudo con respecto al jugador.
+	//FTimerHandle es una estructura que se utiliza para almacenar un identificador de temporizador.
+	FTimerHandle ShieldActivar;
+	FTimerHandle ShieldDesactivar;
 };

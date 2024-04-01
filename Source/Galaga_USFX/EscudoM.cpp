@@ -14,13 +14,8 @@ AEscudoM::AEscudoM()
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Pipe.Shape_Pipe'"));
 	ShieldMesh->SetStaticMesh(ShipMesh.Object);
 }
-float timeShield;
-bool ShieldOn;
-void AEscudoM::EnableShield()//Funcion para activar el escudo.
+void AEscudoM::EnableShield()
 {
-	ShieldOn = true;
-	timeShield = 0.0f;
-	SetActorHiddenInGame(false);
 }
 // Called when the game starts or when spawned
 void AEscudoM::BeginPlay()
@@ -33,15 +28,6 @@ void AEscudoM::BeginPlay()
 void AEscudoM::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (ShieldOn)//Mientras el escudo este activado, el tiempo de activacion aumentara.
-	{
-		timeShield = timeShield + DeltaTime;
-		if (timeShield >= 5.0f)
-		{
-			timeShield = 0.0f;
-			ShieldOn = false;
-			SetActorHiddenInGame(true);
-		}
-	}
+	
 }
 
