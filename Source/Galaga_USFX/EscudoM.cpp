@@ -14,9 +14,6 @@ AEscudoM::AEscudoM()
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Pipe.Shape_Pipe'"));
 	ShieldMesh->SetStaticMesh(ShipMesh.Object);
 }
-void AEscudoM::EnableShield()
-{
-}
 // Called when the game starts or when spawned
 void AEscudoM::BeginPlay()
 {

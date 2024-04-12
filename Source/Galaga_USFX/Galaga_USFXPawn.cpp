@@ -142,19 +142,21 @@ void AGalaga_USFXPawn::ShotTimerExpired()
 }
 void AGalaga_USFXPawn::SpawnShield()
 {
-	// Calcular la posición delante del 'Pawn'
+	// Calcular la posición delante del Pawn.
+	//Location() nos da posicion actual de Pawn.
+	//ForwardVector() nos da la dirección hacia adelante del Pawn.
 	FVector SpawnEsc = GetActorLocation() + GetActorForwardVector() * EscudoDist;
 
 	// Crear una instancia del escudo en la posición calculada
 	AEscudoM* Escudo = GetWorld()->SpawnActor<AEscudoM>(AEscudoM::StaticClass(), SpawnEsc, GetActorRotation());
-	GetWorld()->GetTimerManager().SetTimer(ShieldActivar, this, &AGalaga_USFXPawn::SpawnShield, 10.0f, false);
+	GetWorld()->GetTimerManager().SetTimer(ShieldActivar, this, &AGalaga_USFXPawn::SpawnShield, 10.0f, true);
 	GetWorld()->GetTimerManager().SetTimer(ShieldDesactivar, [Escudo]()
 		{
 			if (Escudo)
 			{
 				Escudo->Destroy();
 			}
-		}, 6.0f, false);
+		}, 6.0f, true);
 }
 void AGalaga_USFXPawn::BeginPlay()
 {

@@ -52,19 +52,20 @@ void AGalaga_USFXGameMode::BeginPlay()
 
 	//Añadimos cada clase de nave y la cantidad maximas que podemos generar.
 	//La estrutura seria: (ClaseNave, CantidadMaxima)=(llave, valor).
-	MaxNav.Add(ANaveCaza::StaticClass(), 5);
-	MaxNav.Add(ACazaGen01::StaticClass(), 5);
-	MaxNav.Add(ACazaGen02::StaticClass(), 5);
-	MaxNav.Add(ANaveTransp::StaticClass(), 5);
-	MaxNav.Add(ATranspGen01::StaticClass(), 5);
-	MaxNav.Add(ATranspGen02::StaticClass(), 5);
-	MaxNav.Add(ANaveEspia::StaticClass(), 5);
-	MaxNav.Add(AEspiaGen01::StaticClass(), 5);
-	MaxNav.Add(AEspiaGen02::StaticClass(), 5);
-	MaxNav.Add(ANaveReab::StaticClass(), 5);
-	MaxNav.Add(AReabGen01::StaticClass(), 5);
-	MaxNav.Add(AReabGen02::StaticClass(), 5);
-	MaxNav.Add(ANaveNodriza::StaticClass(), 1);
+	//Modificado por el momento para favorecer la prueba de generacion de naves caza.
+	MaxNav.Add(ANaveCaza::StaticClass(), 0);
+	MaxNav.Add(ACazaGen01::StaticClass(), 0);
+	MaxNav.Add(ACazaGen02::StaticClass(), 7);
+	MaxNav.Add(ANaveTransp::StaticClass(), 0);
+	MaxNav.Add(ATranspGen01::StaticClass(), 0);
+	MaxNav.Add(ATranspGen02::StaticClass(), 0);
+	MaxNav.Add(ANaveEspia::StaticClass(), 0);
+	MaxNav.Add(AEspiaGen01::StaticClass(), 0);
+	MaxNav.Add(AEspiaGen02::StaticClass(), 0);
+	MaxNav.Add(ANaveReab::StaticClass(), 0);
+	MaxNav.Add(AReabGen01::StaticClass(), 0);
+	MaxNav.Add(AReabGen02::StaticClass(), 0);
+	MaxNav.Add(ANaveNodriza::StaticClass(), 0);
 
 	/*FString DatosMapa = ListarTmap(MaxNav);
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, DatosMapa);*/

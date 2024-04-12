@@ -25,7 +25,15 @@ protected:
 	virtual void Vida();
 	virtual void Bombardear();
 	virtual void Cargar_Sbomba();
+	
 	virtual void Super_Bomba();
 public:
 	virtual void Tick(float DeltaTime) override;
+	virtual void BeginPlay() override;
+private:
+	UPROPERTY(EditAnywhere, Category = "Gameplay")
+	float BombDist; //Distancia del escudo con respecto al jugador.
+	//FTimerHandle es una estructura brindada por UE que nos permite manejar y referenciar temporizadores.
+	FTimerHandle BombActivar;
+	FTimerHandle BombDesactivar;
 };

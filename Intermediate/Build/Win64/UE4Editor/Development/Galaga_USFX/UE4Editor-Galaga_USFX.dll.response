@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Bomb.cpp.obj"
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\CazaGen01.cpp.obj"
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\CazaGen02.cpp.obj"
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Enemy.cpp.obj"
@@ -53,6 +54,7 @@
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\ReabGen02.cpp.obj"
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\TranspGen01.cpp.obj"
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\TranspGen02.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Bomb.gen.cpp.obj"
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\CazaGen01.gen.cpp.obj"
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\CazaGen02.gen.cpp.obj"
 "C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Enemy.gen.cpp.obj"

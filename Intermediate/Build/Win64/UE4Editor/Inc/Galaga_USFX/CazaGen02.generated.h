@@ -58,7 +58,10 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACazaGen02)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_CazaGen02_h_15_PRIVATE_PROPERTY_OFFSET
+#define Galaga_USFX_Source_Galaga_USFX_CazaGen02_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__BombDist() { return STRUCT_OFFSET(ACazaGen02, BombDist); }
+
+
 #define Galaga_USFX_Source_Galaga_USFX_CazaGen02_h_12_PROLOG
 #define Galaga_USFX_Source_Galaga_USFX_CazaGen02_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
