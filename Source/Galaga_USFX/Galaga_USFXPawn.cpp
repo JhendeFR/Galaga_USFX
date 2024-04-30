@@ -53,7 +53,7 @@ AGalaga_USFXPawn::AGalaga_USFXPawn()
 	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
-	EscudoDist = 100.0f;
+	//Escudo
 }
 
 void AGalaga_USFXPawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -135,32 +135,42 @@ void AGalaga_USFXPawn::FireShot(FVector FireDirection)
 		}
 	}
 }
-
 void AGalaga_USFXPawn::ShotTimerExpired()
 {
 	bCanFire = true;
 }
-void AGalaga_USFXPawn::SpawnShield()
-{
-	// Calcular la posición delante del Pawn.
-	//Location() nos da posicion actual de Pawn.
-	//ForwardVector() nos da la dirección hacia adelante del Pawn.
-	FVector SpawnEsc = GetActorLocation() + GetActorForwardVector() * EscudoDist;
-
-	// Crear una instancia del escudo en la posición calculada
-	AEscudoM* Escudo = GetWorld()->SpawnActor<AEscudoM>(AEscudoM::StaticClass(), SpawnEsc, GetActorRotation());
-	GetWorld()->GetTimerManager().SetTimer(ShieldActivar, this, &AGalaga_USFXPawn::SpawnShield, 10.0f, true);
-	GetWorld()->GetTimerManager().SetTimer(ShieldDesactivar, [Escudo]()
-		{
-			if (Escudo)
-			{
-				Escudo->Destroy();
-			}
-		}, 6.0f, true);
-}
 void AGalaga_USFXPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	// Llamar a la función SpawnShield al inicio del juego.
-	SpawnShield();
+	GetWorld()->GetTimerManager().SetTimer(TimerEsc, this, &AGalaga_USFXPawn::GenEscudo, 15.0f, true);
+}
+void AGalaga_USFXPawn::IncSpeed(float vel) {
+		MoveSpeed = MoveSpeed + vel;
+}
+void AGalaga_USFXPawn::ResSpeed() {
+	MoveSpeed = 1000.0f;
+}
+void AGalaga_USFXPawn::GenEscudo() {
+	//Posicion del escudo.
+	FVector Location = GetActorLocation() + FVector(100.0f, 0.0f, 0.0f);
+	FRotator Rotation = GetActorRotation();
+	//Crear el escudo.
+	AEscudoM* CrearEscudoM= GetWorld()->SpawnActor<AEscudoM>(AEscudoM::StaticClass(), Location, Rotation);
+	if (CrearEscudoM != nullptr)
+	{
+		CrearEscudoM->SetActorLocation(Location);
+		CrearEscudoM->SetActorRotation(Rotation);
+
+		FTimerDelegate TimerDel;
+		TimerDel.BindLambda([CrearEscudoM]()
+			{
+				if (CrearEscudoM && CrearEscudoM->IsValidLowLevel())
+				{
+					CrearEscudoM->Destroy();
+				}
+			});
+
+		// Destruccion del actor despues de 5 segundos de aparecer
+		GetWorld()->GetTimerManager().SetTimer(DestruirBarrera, TimerDel, 5.0f, false);
+	}
 }

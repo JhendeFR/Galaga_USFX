@@ -8,10 +8,15 @@ AReabGen01::AReabGen01() {
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void AReabGen01::Mover(float DeltaTime) {
-	velocidad = 0.25;
-	//Movimiento Diagonal Arriba-Izquierda.
-	SetActorLocation(GetActorLocation() + FVector(velocidad, -velocidad, 0.0f));
+    velocidad = 1.0f;
 
+    static float TiempoInicio = GetWorld()->GetTimeSeconds();
+    float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
+
+    FVector NewLocation = GetActorLocation();
+    NewLocation.Y += DesplazamientoHorizontal;
+
+    SetActorLocation(NewLocation);
 }
 void AReabGen01::Vida() {
 

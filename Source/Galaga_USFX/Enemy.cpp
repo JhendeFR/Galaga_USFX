@@ -27,3 +27,7 @@ void AEnemy::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+void AEnemy::TReset_Proj()
+{
+	ActDisp = true;
+}

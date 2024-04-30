@@ -2,18 +2,44 @@
 
 
 #include "CazaGen01.h"
+#include "ProjEnemy.h"
+#include "Kismet/GameplayStatics.h"
 
 ACazaGen01::ACazaGen01() {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ACazaGen01::Mover(float DeltaTime) { 
-	velocidad = 0.25;//Establecemos la velocidad ya heredada de la clase 'AEnemy' abstracta.
-	//SetActorLoacation y GetActorLocation son metodos usador por UE para con Set obtener y con Get establecer la posicion de un objeto.
-	SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
+	velocidad = 1.0f;
+
+	static float TiempoInicio = GetWorld()->GetTimeSeconds();
+	float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
+
+	FVector NewLocation = GetActorLocation();
+	NewLocation.Y += DesplazamientoHorizontal;
+
+	SetActorLocation(NewLocation);
+	//Paravolico
+	/*FVector NewLocation = GetActorLocation();
+    NewLocation.X += vel * FMath::Cos(GetWorld()->GetTimeSeconds()) * GetWorld()->GetDeltaSeconds();
+    NewLocation.Y += vel * FMath::Sin(GetWorld()->GetTimeSeconds()) * GetWorld()->GetDeltaSeconds();
+    SetActorLocation(NewLocation);*/
 }
 void ACazaGen01::Ataque() {
+	//Posicion de spawn del proyectil.
+	FVector SpawnPLocation = GetActorLocation() + (GetActorForwardVector() * 1);
 
+	if (ActDisp == true)
+	{
+		UWorld* World = GetWorld();
+		if (World)
+		{
+			AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
+		}
+		//Activa el temporizador para el siguiente disparo.
+		World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);
+		ActDisp = false; //Desactiva el disparo para que no se dispare continuamente.
+	}
 }
 void ACazaGen01::Vida() {
 

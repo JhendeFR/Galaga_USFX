@@ -2,6 +2,8 @@
 
 
 #include "CazaGen02.h"
+#include "ProjEnemy.h"
+#include "Kismet/GameplayStatics.h"
 #include "Bomb.h"
 
 ACazaGen02::ACazaGen02() {
@@ -13,15 +15,32 @@ void ACazaGen02::Mover(float DeltaTime) {
     velocidad = 1.0f;
 
     static float TiempoInicio = GetWorld()->GetTimeSeconds();
-    float DesplazamientoVertical = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
+    float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
 
     FVector NewLocation = GetActorLocation();
-    NewLocation.Y += DesplazamientoVertical;
+    NewLocation.Y += DesplazamientoHorizontal;
 
     SetActorLocation(NewLocation);
+	//zigzag
+	/*FVector NewLocation = GetActorLocation();
+    NewLocation.Y += FMath::Sin(GetWorld()->GetTimeSeconds() * vel) * GetWorld()->GetDeltaSeconds();
+    SetActorLocation(NewLocation);*/
 }
 void ACazaGen02::Ataque() {
+	//Posicion de spawn del proyectil.
+	FVector SpawnPLocation = GetActorLocation() + (GetActorForwardVector() * 1);
 
+	if (ActDisp == true)
+	{
+		UWorld* World = GetWorld();
+		if (World)
+		{
+			AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
+		}
+		//Activa el temporizador para el siguiente disparo.
+		World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);
+		ActDisp = false; //Desactiva el disparo para que no se dispare continuamente.
+	}
 }
 void ACazaGen02::Vida() {
 
@@ -37,8 +56,8 @@ void ACazaGen02::Super_Bomba() {
 	FVector SpawnEsc = GetActorLocation() + GetActorForwardVector() * BombDist;
 
 	ABomb* Bomba = GetWorld()->SpawnActor<ABomb>(ABomb::StaticClass(), SpawnEsc, GetActorRotation());
-	int aleNum= FMath::RandRange(0, 10);
-	if (aleNum == 6) {
+	int aleNum= FMath::RandRange(0, 5);
+	if (aleNum == 2) {
 		GetWorld()->GetTimerManager().SetTimer(BombActivar, this, &ACazaGen02::Super_Bomba, 10.0f, true);
 	}
 	GetWorld()->GetTimerManager().SetTimer(BombDesactivar, [Bomba]()

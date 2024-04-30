@@ -27,6 +27,10 @@ protected:
 	float velocidad;
 	float destruir;
 	float escapar;
+	float ProjDist;
+	bool ActDisp;
+	FVector GunOffset;
+	FTimerHandle Timer_fin;
 public:
 	//Al ser propiedades protegidas es necesario crear metodos para poder leer (Get) y modificar (Set) las propiedades anteriores.
 	FORCEINLINE int Getataque() const { return ataque; }
@@ -48,8 +52,7 @@ public:
 	FORCEINLINE void Setescapar(float _escapar) { escapar = _escapar; }
 
 public:
-	AEnemy(); //Este consturctor al no tener implementacion no hace mas de lo que haria el constructor de la clase 'AActor' (la clase base de 'AEnemy')
-
+	AEnemy(); //Este consturctor al no tener implementacion no hace mas de lo que haria el constructor de la clase 'AActor' (la clase base de 'AEnemy').
 protected:
 	//Con 'virtual' se indica que puede proporcionar su propia implementacion.
 	//Se utiliza Overeride para poder remplazar la implementacion base.
@@ -69,4 +72,6 @@ protected:
 	void Vida() PURE_VIRTUAL(AEnemy::Vida, );
 	void Apariencia() PURE_VIRTUAL(AEnemy::Apariencia, );
 	void Destruir() PURE_VIRTUAL(AEnemy::Destruir, );
+public:
+	virtual void TReset_Proj();//Metodo virtual que se encarga de reiniciar el disparo.
 };

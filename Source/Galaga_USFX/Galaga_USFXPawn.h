@@ -78,11 +78,11 @@ public:
 	//Con 'virtual' se indica que puede proporcionar su propia implementacion.
 	//Se utiliza Overeride para poder remplazar la implementacion base.
 	virtual void BeginPlay() override;
-	void SpawnShield();//Declaramos la funcion para generar el escudo.
 private:
-	UPROPERTY(EditAnywhere, Category = "Gameplay")
-	float EscudoDist; //Distancia del escudo con respecto al jugador.
-	//FTimerHandle es una estructura brindada por UE que nos permite manejar y referenciar temporizadores.
-	FTimerHandle ShieldActivar;
-	FTimerHandle ShieldDesactivar;
+	void GenEscudo();
+	FTimerHandle DestruirBarrera;
+	FTimerHandle TimerEsc;
+public:
+	void IncSpeed(float vel);
+	void ResSpeed();
 };

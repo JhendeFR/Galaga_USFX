@@ -8,8 +8,15 @@ ANaveReab::ANaveReab() {
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ANaveReab::Mover(float DeltaTime) {
-	velocidad = 0.25;
-	SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
+    velocidad = 2.0f;
+
+    static float TiempoInicio = GetWorld()->GetTimeSeconds();
+    float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
+
+    FVector NewLocation = GetActorLocation();
+    NewLocation.Y += DesplazamientoHorizontal;
+
+    SetActorLocation(NewLocation);
 }
 void ANaveReab::Vida() {
 

@@ -12,6 +12,8 @@
 #include "TranspGen01.h"
 #include "TranspGen02.h"
 #include "NaveNodriza.h"
+#include "PowerUpFactory.h"
+#include "Power_Speed.h"
 //Esta es la implementacion del constructor que define la instancia inicial de la clase 'AGalaga_USFXPawn' para establecer un conportamiento preterminado.
 //El constructor se llama automaticamente al crear un objeto de la clase.
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
@@ -53,24 +55,21 @@ void AGalaga_USFXGameMode::BeginPlay()
 	//Añadimos cada clase de nave y la cantidad maximas que podemos generar.
 	//La estrutura seria: (ClaseNave, CantidadMaxima)=(llave, valor).
 	//Modificado por el momento para favorecer la prueba de generacion de naves caza.
-	MaxNav.Add(ANaveCaza::StaticClass(), 0);
-	MaxNav.Add(ACazaGen01::StaticClass(), 0);
-	MaxNav.Add(ACazaGen02::StaticClass(), 7);
-	MaxNav.Add(ANaveTransp::StaticClass(), 0);
-	MaxNav.Add(ATranspGen01::StaticClass(), 0);
-	MaxNav.Add(ATranspGen02::StaticClass(), 0);
-	MaxNav.Add(ANaveEspia::StaticClass(), 0);
-	MaxNav.Add(AEspiaGen01::StaticClass(), 0);
-	MaxNav.Add(AEspiaGen02::StaticClass(), 0);
-	MaxNav.Add(ANaveReab::StaticClass(), 0);
+	MaxNav.Add(ANaveCaza::StaticClass(), 5);
+	MaxNav.Add(ACazaGen01::StaticClass(), 5);
+	MaxNav.Add(ACazaGen02::StaticClass(), 5);
+	MaxNav.Add(ANaveTransp::StaticClass(), 1);
+	MaxNav.Add(ATranspGen01::StaticClass(), 1);
+	MaxNav.Add(ATranspGen02::StaticClass(), 1);
+	MaxNav.Add(ANaveEspia::StaticClass(), 5);
+	MaxNav.Add(AEspiaGen01::StaticClass(), 5);
+	MaxNav.Add(AEspiaGen02::StaticClass(), 5);
+	MaxNav.Add(ANaveReab::StaticClass(), 1);
 	MaxNav.Add(AReabGen01::StaticClass(), 0);
 	MaxNav.Add(AReabGen02::StaticClass(), 0);
-	MaxNav.Add(ANaveNodriza::StaticClass(), 0);
+	MaxNav.Add(ANaveNodriza::StaticClass(), 1);
 
-	/*FString DatosMapa = ListarTmap(MaxNav);
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, DatosMapa);*/
-
-	FVector UIniNaves = FVector(0.0f, -1000.0f, 250.0f);
+	FVector UIniNaves = FVector(0.0f, -1000.0f, 150.0f);
 	//No tocaremos la rotacion porque no nos interesa por ahora la rotacion de los objetos.
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
@@ -78,9 +77,9 @@ void AGalaga_USFXGameMode::BeginPlay()
 	if (World != nullptr) //Verificamos si el puntero obtenido es valido.
 	{
 		//Numero de filas.
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 1; i++) {
 			//Numero de Naves por fila.
-			for (int j = 0; j < 10; j++) {
+			for (int j = 0; j < 1; j++) {
 				//Recordemos declarar a 'TipoNavAlea' como referencia de las subclases de 'AEnemy'.
 				TSubclassOf<AEnemy>TipoNavAlea = TipoNaves[FMath::RandRange(0, TipoNaves.Num()-1)];//Esto asigna una nave aleatoria de nuestro array de naves.
 				//Verificamos si el Tmap tiene la llave (TipoNavAlea) que recordemos que es una subclase especifica de 'Enemy'.
@@ -88,7 +87,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 				if (MaxNav.Contains(TipoNavAlea)) {
 					int NavesGeneradas = MaxNav[TipoNavAlea];//Asignamos a la varible el valor del TMap correspondiente a la llave.
 					if (NavesGeneradas > 0) {
-						FVector PActualNaves = FVector(UIniNaves.X + i * 150, UIniNaves.Y + j * 105, UIniNaves.Z);//Esto solo controla la distancia entre las naves
+						FVector PActualNaves = FVector(UIniNaves.X + i * 200, UIniNaves.Y + j * 200, UIniNaves.Z);//Esto solo controla la distancia entre las naves
 						AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, rotacionNave);//Esto spawnea las naves en el mundo.
 						Enemigos.Push(NavesInst);//Esto añade las naves al array de enemigos.
 						NavesGeneradas--;//Cada vez que se crea una nave, se reduce el contador de naves disponibles para ese tipo.
@@ -96,5 +95,10 @@ void AGalaga_USFXGameMode::BeginPlay()
 				}
 			}
 		}
+		//Generarmos los power ups.
+		APowerUpFactory* GenPowerUp = World->SpawnActor<APowerUpFactory>();
+		GenPowerUp->CrearPower("Speed");
+		//GenPowerUp->CrearPower();
+
 	}
 }

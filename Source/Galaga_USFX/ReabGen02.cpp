@@ -8,9 +8,15 @@ AReabGen02::AReabGen02() {
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void AReabGen02::Mover(float DeltaTime) {
-	FVector PActual = GetActorLocation();
-	velocidad = 0.25;
-	SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
+    velocidad = 1.0f;
+
+    static float TiempoInicio = GetWorld()->GetTimeSeconds();
+    float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
+
+    FVector NewLocation = GetActorLocation();
+    NewLocation.Y += DesplazamientoHorizontal;
+
+    SetActorLocation(NewLocation);
 }
 void AReabGen02::Vida() {
 
