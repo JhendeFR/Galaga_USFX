@@ -1,5 +1,5 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
-//Incluir las clases necesarias.
+
 #include "Galaga_USFXGameMode.h"
 #include "Galaga_USFXPawn.h"
 #include "Enemy.h"
@@ -14,6 +14,18 @@
 #include "NaveNodriza.h"
 #include "PowerUpFactory.h"
 #include "Power_Speed.h"
+#include "NavControlInt.h"
+#include "NavVel.h"
+#include "NavArm.h"
+#include "ControlDirect.h"
+#include "PortaNavControl.h"
+#include "Portanave.h"
+#include "RVel.h"
+#include "RArm.h"
+
+
+
+
 //Esta es la implementacion del constructor que define la instancia inicial de la clase 'AGalaga_USFXPawn' para establecer un conportamiento preterminado.
 //El constructor se llama automaticamente al crear un objeto de la clase.
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
@@ -98,7 +110,11 @@ void AGalaga_USFXGameMode::BeginPlay()
 		//Generarmos los power ups.
 		APowerUpFactory* GenPowerUp = World->SpawnActor<APowerUpFactory>();
 		GenPowerUp->CrearPower("Speed");
-		//GenPowerUp->CrearPower();
 
+		Control = World->SpawnActor<AControlDirect>();
+		ANavVel* v = World->SpawnActor<ANavVel>();
+		APortaNavControl * j  = Control->getNavControl(v);
+		//APortaNavControl* j = Control->getNavControl(naver);
+		//Control->getNavControl(naver);
 	}
 }
