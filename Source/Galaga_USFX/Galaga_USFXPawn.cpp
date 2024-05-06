@@ -13,6 +13,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
 #include "EscudoM.h"
+#include "Power_Up.h"
+#include "Power_Speed.h"
 
 
 const FName AGalaga_USFXPawn::MoveForwardBinding("MoveForward");
@@ -27,6 +29,7 @@ AGalaga_USFXPawn::AGalaga_USFXPawn()
 	// Create the mesh component
 	ShipMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	RootComponent = ShipMeshComponent;
+
 	ShipMeshComponent->SetCollisionProfileName(UCollisionProfile::Pawn_ProfileName);
 	ShipMeshComponent->SetStaticMesh(ShipMesh.Object);
 	
@@ -46,7 +49,7 @@ AGalaga_USFXPawn::AGalaga_USFXPawn()
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("TopDownCamera"));
 	CameraComponent->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	CameraComponent->bUsePawnControlRotation = false;	// Camera does not rotate relative to arm
-
+	
 	// Movement
 	MoveSpeed = 1000.0f;
 	// Weapon
@@ -150,6 +153,26 @@ void AGalaga_USFXPawn::IncSpeed(float vel) {
 void AGalaga_USFXPawn::ResSpeed() {
 	MoveSpeed = 1000.0f;
 }
+
+void AGalaga_USFXPawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
+{
+	APower_Speed* poder = Cast<APower_Speed>(Other);
+	if (poder != nullptr) {
+		poder->ActPowerUp(this);
+		GetWorld()->GetTimerManager().SetTimer(TimerSpeed, this, &AGalaga_USFXPawn::ResSpeed, 5.0f, false);
+		FTimerDelegate TimerDel;
+		TimerDel.BindLambda([poder]()
+			{
+				if (poder && poder->IsValidLowLevel())
+				{
+					poder->Destroy();
+				}
+			});
+		GetWorld()->GetTimerManager().SetTimer(TDestroy, TimerDel, 1.0f, false);
+		//poder->Destroy();
+	}
+}
+
 void AGalaga_USFXPawn::GenEscudo() {
 	//Posicion del escudo.
 	FVector Location = GetActorLocation() + FVector(100.0f, 0.0f, 0.0f);

@@ -8,14 +8,26 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FVector;
+struct FHitResult;
 #ifdef GALAGA_USFX_Galaga_USFXPawn_generated_h
 #error "Galaga_USFXPawn.generated.h already included, missing '#pragma once' in Galaga_USFXPawn.h"
 #endif
 #define GALAGA_USFX_Galaga_USFXPawn_generated_h
 
 #define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_12_SPARSE_DATA
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_12_RPC_WRAPPERS
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execNotifyHit);
+
+
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execNotifyHit);
+
+
 #define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGalaga_USFXPawn(); \

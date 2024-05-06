@@ -114,7 +114,5 @@ void AGalaga_USFXGameMode::BeginPlay()
 		Control = World->SpawnActor<AControlDirect>();
 		ANavVel* v = World->SpawnActor<ANavVel>();
 		APortaNavControl * j  = Control->getNavControl(v);
-		//APortaNavControl* j = Control->getNavControl(naver);
-		//Control->getNavControl(naver);
 	}
 }

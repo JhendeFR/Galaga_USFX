@@ -9,16 +9,15 @@ APower_Speed::APower_Speed()
 	Power->SetStaticMesh(ShipMesh.Object);
 }
 void APower_Speed::ActPowerUp(AGalaga_USFXPawn* Player) {
-	Player->IncSpeed(200.0f);
+	Player->IncSpeed(50.0f);
 }
-void APower_Speed::DesPowerUp(AGalaga_USFXPawn* Player) {
-	Player->ResSpeed();
-}
+
 void APower_Speed::Movimiento() {
 	 int vel = 100.0f;
 	FVector NewLocation = GetActorLocation() + -GetActorForwardVector() * vel * GetWorld()->GetDeltaSeconds();
 	SetActorLocation(NewLocation);
 }
+
 // Called when the game starts or when spawned
 void APower_Speed::BeginPlay()
 {

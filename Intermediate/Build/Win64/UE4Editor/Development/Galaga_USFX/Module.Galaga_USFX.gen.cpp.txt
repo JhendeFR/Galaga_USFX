@@ -14,6 +14,13 @@ C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Wi
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/CazaGen02.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/CazaGen02.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\CazaGen02.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ControlDirect.gen.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/ControlDirect.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavControlInt.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\PortaNavControl.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\PortaNavControl.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavControlInt.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ControlDirect.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Enemy.gen.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/EscudoM.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/EscudoM.h
@@ -33,18 +40,17 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Galaga_USFXGameMode.generated.h
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXPawn.gen.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/Galaga_USFXPawn.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Galaga_USFXPawn.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXProjectile.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/Galaga_USFXProjectile.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Galaga_USFXProjectile.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NavArm.gen.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/NavArm.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Portanave.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Portanave.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\RArm.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\RArm.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavArm.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NavControlInt.gen.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NaveCaza.gen.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NaveEspia.gen.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NaveNodriza.gen.cpp
@@ -56,10 +62,25 @@ C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Wi
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NaveTransp.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/NaveTransp.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveTransp.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NavVel.gen.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/NavVel.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\RVel.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\RVel.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavVel.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/PortaNavControl.gen.cpp
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Portanave.gen.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Power_Speed.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/Power_Speed.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Power_Up.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Power_Up.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Galaga_USFXPawn.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Galaga_USFXPawn.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Power_Speed.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Power_Up.gen.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/PowerUpFactory.gen.cpp
@@ -68,12 +89,14 @@ C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Wi
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ProjEnemy.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/ProjEnemy.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjEnemy.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/RArm.gen.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ReabGen01.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/ReabGen01.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ReabGen01.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/ReabGen02.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/ReabGen02.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ReabGen02.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/RVel.gen.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/TranspGen01.gen.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX/TranspGen01.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\TranspGen01.generated.h

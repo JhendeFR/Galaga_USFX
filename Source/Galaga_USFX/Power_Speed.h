@@ -18,9 +18,7 @@ class GALAGA_USFX_API APower_Speed : public APower_Up
 public:
 	APower_Speed();
 	virtual void ActPowerUp(AGalaga_USFXPawn* Player);
-	virtual void DesPowerUp(AGalaga_USFXPawn* Player);
 	void Movimiento();
-
 public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void BeginPlay() override;
