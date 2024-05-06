@@ -41,6 +41,5 @@ void ANavVel::BuildArm()
 
 APortaNavControl* ANavVel::setNavControl()
 {
-	//APortaNavControl* Nave = NewObject<APortaNavControl>();
 	return nave;
 }

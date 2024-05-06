@@ -8,6 +8,7 @@
 #include "C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/EspiaGen01.gen.cpp"
 #include "C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/EspiaGen02.gen.cpp"
 #include "C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXGameMode.gen.cpp"
+#include "C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXPawn.gen.cpp"
 #include "C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/Galaga_USFXProjectile.gen.cpp"
 #include "C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NavArm.gen.cpp"
 #include "C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX/NavControlInt.gen.cpp"

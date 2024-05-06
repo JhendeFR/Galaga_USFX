@@ -17,6 +17,7 @@
 #include "NavControlInt.h"
 #include "NavVel.h"
 #include "NavArm.h"
+#include "NavAll.h"
 #include "ControlDirect.h"
 #include "PortaNavControl.h"
 #include "Portanave.h"
@@ -112,7 +113,11 @@ void AGalaga_USFXGameMode::BeginPlay()
 		GenPowerUp->CrearPower("Speed");
 
 		Control = World->SpawnActor<AControlDirect>();
-		ANavVel* v = World->SpawnActor<ANavVel>();
-		APortaNavControl * j  = Control->getNavControl(v);
+		/*ANavVel* v = World->SpawnActor<ANavVel>();
+		APortaNavControl * j  = Control->getNavControl(v);*/
+		/*ANavArm* a = World->SpawnActor<ANavArm>();
+		APortaNavControl * k = Control->getNavControl(a);*/
+		ANavAll* b = World->SpawnActor<ANavAll>();
+		APortaNavControl * l = Control->getNavControl(b);
 	}
 }

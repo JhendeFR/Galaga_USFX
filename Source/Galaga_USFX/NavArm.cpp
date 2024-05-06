@@ -31,17 +31,15 @@ void ANavArm::BuildVel()
 }
 void ANavArm::BuildArm()
 {
-	int arm = 100;
-	FVector Posicion = FVector(-700.0f, -500.0f, 150.0f);
+	int arm = 50;
+	FVector Posicion = FVector(-700.0f, -500.0f, 200.0f);
 	FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
 	ARArm* n1 = GetWorld()->SpawnActor<ARArm>(Posicion, Rotacion);
-	FVector Posicion2 = FVector(-700.0f, -500.0f, 140.0f);
-	FRotator Rotacion2 = FRotator(0.0f, 0.0f, 0.0f);
-	APortanave* n2 = GetWorld()->SpawnActor<APortanave>(Posicion2, Rotacion2);
+	FVector Posicion2 = FVector(-700.0f, -500.0f, 170.0f);
+	APortanave* n2 = GetWorld()->SpawnActor<APortanave>(Posicion2, Rotacion);
 }
 
 APortaNavControl* ANavArm::setNavControl()
 {
-	APortaNavControl* Nave = NewObject<APortaNavControl>();
-	return Nave;
+	return nave;
 }

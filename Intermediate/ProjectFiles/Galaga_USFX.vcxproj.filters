@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{28105403-AC28-4536-98C3-0169C037C6E3}</UniqueIdentifier>
+      <UniqueIdentifier>{EDD64361-CD36-483F-8D5F-EBC1EE3431A9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{4457193D-DBF3-4933-ACC3-8CE945C46E96}</UniqueIdentifier>
+      <UniqueIdentifier>{BC54CBD4-6FD8-4BEC-BA9A-E5C9316F4C28}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -35,7 +35,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX">
-      <UniqueIdentifier>{94864C0E-F661-43A8-982B-5C7ABEC7396A}</UniqueIdentifier>
+      <UniqueIdentifier>{CBEA8095-ACD8-4D13-9F88-386B976C5B61}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX\Bomb.cpp">
       <Filter>Source\Galaga_USFX</Filter>
@@ -110,6 +110,12 @@
       <Filter>Source\Galaga_USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX\Galaga_USFXProjectile.h">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX\NavAll.cpp">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\NavAll.h">
       <Filter>Source\Galaga_USFX</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX\NavArm.cpp">
