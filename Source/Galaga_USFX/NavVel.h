@@ -7,6 +7,7 @@
 #include "NavControlInt.h"
 #include "Portanave.h"
 #include "RVel.h"
+#include "Galaga_USFXPawn.h"
 #include "NavVel.generated.h"
 UCLASS()
 class GALAGA_USFX_API ANavVel : public AActor, public INavControlInt

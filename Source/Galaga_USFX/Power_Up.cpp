@@ -12,16 +12,6 @@ APower_Up::APower_Up()
 	RootComponent = Power;
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_WideCapsule.Shape_WideCapsule'"));
 	Power->SetStaticMesh(ShipMesh.Object);
-	Power->SetCollisionProfileName(UCollisionProfile::Pawn_ProfileName);
-	SetActorEnableCollision(true);
-
-}
-
-void APower_Up::Colision()
-{
-	SetActorTickEnabled(false);
-	SetActorHiddenInGame(true);
-	SetActorEnableCollision(false);
 }
 
 // Called when the game starts or when spawned

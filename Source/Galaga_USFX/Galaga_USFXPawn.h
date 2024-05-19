@@ -89,4 +89,5 @@ public:
 	void ResSpeed();
 	UFUNCTION()
 	virtual void NotifyHit(class UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult&Hit) override;
+	void reabvel(float vel);
 };

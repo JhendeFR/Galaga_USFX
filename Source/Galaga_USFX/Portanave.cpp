@@ -14,6 +14,7 @@ APortanave::APortanave()
 	RootComponent = Portanave;
 	Portanave->SetStaticMesh(ShipMesh.Object);
 	SetActorRelativeScale3D(FVector(2.5f, 3.5f, 2.5f));
+	SetActorEnableCollision(false);
 }
 
 // Called when the game starts or when spawned
@@ -29,4 +30,3 @@ void APortanave::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-

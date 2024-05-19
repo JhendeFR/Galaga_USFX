@@ -8,7 +8,7 @@ ANaveNodriza::ANaveNodriza() {
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
 }
 void ANaveNodriza::Mover(float DeltaTime) {
-    velocidad = 2.0f;
+    velocidad = 1.0f;
 
     static float TiempoInicio = GetWorld()->GetTimeSeconds();
     float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;

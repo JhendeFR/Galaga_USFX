@@ -8,7 +8,6 @@ ANavVel::ANavVel()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	
 }
 
 // Called when the game starts or when spawned
@@ -28,7 +27,8 @@ void ANavVel::Tick(float DeltaTime)
 void ANavVel::BuildVel()
 {
 	float vel = 1000.0f;
-	FVector Posicion = FVector(-700.0f, -500.0f, 200.0f);
+	//Player->reabvel(vel);
+	FVector Posicion = FVector(-700.0f, -500.0f, 170.0f);
 	FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
 	ARVel* n1 = GetWorld()->SpawnActor<ARVel>(Posicion, Rotacion);
 	FVector Posicion2 = FVector(-700.0f, -500.0f, 170.0f);

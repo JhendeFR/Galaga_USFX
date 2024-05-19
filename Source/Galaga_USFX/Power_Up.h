@@ -19,7 +19,6 @@ public:
 	APower_Up();
 	
 	virtual void ActPowerUp(class AGalaga_USFXPawn* pawn) PURE_VIRTUAL(APower_Up::ActPowerUP, );
-	virtual void Colision();
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

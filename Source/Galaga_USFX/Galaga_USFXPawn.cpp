@@ -15,6 +15,14 @@
 #include "EscudoM.h"
 #include "Power_Up.h"
 #include "Power_Speed.h"
+#include "ControlDirect.h"
+#include "NavVel.h"
+#include "NavArm.h"
+#include "NavAll.h"
+#include "PortaNavControl.h"
+#include "Portanave.h"
+#include "RVel.h"
+#include "RArm.h"
 
 
 const FName AGalaga_USFXPawn::MoveForwardBinding("MoveForward");
@@ -153,12 +161,13 @@ void AGalaga_USFXPawn::IncSpeed(float vel) {
 void AGalaga_USFXPawn::ResSpeed() {
 	MoveSpeed = 1000.0f;
 }
-
+//Metodo que se llama cuando el objeto coliciona con otro objeto.
 void AGalaga_USFXPawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
 	APower_Speed* poder = Cast<APower_Speed>(Other);
 	if (poder != nullptr) {
 		poder->ActPowerUp(this);
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Power Up velocidad");
 		GetWorld()->GetTimerManager().SetTimer(TimerSpeed, this, &AGalaga_USFXPawn::ResSpeed, 5.0f, false);
 		FTimerDelegate TimerDel;
 		TimerDel.BindLambda([poder]()
@@ -169,8 +178,29 @@ void AGalaga_USFXPawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPr
 				}
 			});
 		GetWorld()->GetTimerManager().SetTimer(TDestroy, TimerDel, 1.0f, false);
-		//poder->Destroy();
 	}
+	ARVel* reabvel = Cast<ARVel>(Other);
+	ARArm* reabarm = Cast<ARArm>(Other);
+	APortanave* portanave = Cast<APortanave>(Other);
+	if (reabvel != nullptr && reabarm != nullptr) {
+		reabvel->Destroy();
+		reabarm->Destroy();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "reabastecimiento de velocidad y municion");
+	}
+	if (reabvel != nullptr) {
+		reabvel->Destroy();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "reabastecimiento de velocidad");
+	}
+	if (reabarm != nullptr) {
+		reabarm->Destroy();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "reabastecimiento de municion");
+	}
+}
+
+void AGalaga_USFXPawn::reabvel(float vel)
+{
+	MoveSpeed = vel;
+
 }
 
 void AGalaga_USFXPawn::GenEscudo() {

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
+#include "Galaga_USFXPawn.h"
 #include "PortaNavControl.h"
 #include "NavControlInt.generated.h"
 
