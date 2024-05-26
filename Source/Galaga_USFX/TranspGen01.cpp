@@ -4,11 +4,12 @@
 #include "TranspGen01.h"
 
 ATranspGen01::ATranspGen01() {
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel4.EnemyLevel4'"));
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
+    SetActorRelativeScale3D(FVector(1.5f, 1.5f, 1.5f));
 }
 void ATranspGen01::Mover(float DeltaTime) {
-    velocidad = 1.0f;
+    velocidad = 2.0f;
 
     static float TiempoInicio = GetWorld()->GetTimeSeconds();
     float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;

@@ -4,6 +4,20 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Enemy.h"
+//#include "NaveCaza.h"
+//#include "CazaGen01.h"
+//#include "CazaGen02.h"
+//#include "NaveEspia.h"
+//#include "EspiaGen01.h"
+//#include "EspiaGen02.h"
+//#include "NaveReab.h"
+//#include "ReabGen01.h"
+//#include "ReabGen02.h"
+//#include "NaveTransp.h"
+//#include "TranspGen01.h"
+//#include "TranspGen02.h"
+//#include "NaveNodriza.h"
 #include "Galaga_USFXProjectile.generated.h"
 
 class UProjectileMovementComponent;
@@ -33,5 +47,7 @@ public:
 	FORCEINLINE UStaticMeshComponent* GetProjectileMesh() const { return ProjectileMesh; }
 	/** Returns ProjectileMovement subobject **/
 	FORCEINLINE UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
+	UFUNCTION()
+	virtual void NotifyHit(class UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;
 };
 

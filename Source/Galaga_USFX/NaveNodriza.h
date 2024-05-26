@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Enemy.h"
+#include "ProjEnemy.h"
+#include "Galaga_USFXProjectile.h"
 #include "NaveNodriza.generated.h"
 
 /**

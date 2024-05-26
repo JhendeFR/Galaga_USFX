@@ -7,12 +7,15 @@
 #include "Bomb.h"
 
 ACazaGen02::ACazaGen02() {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Nodriza1.Nodriza1'"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
+	SetActorRelativeScale3D(FVector(0.40f, 0.40f, 0.40f));
+	ActDisp = true;
+	cadencia = 2.0f;
 	BombDist = 100.0f;
 }
 void ACazaGen02::Mover(float DeltaTime) {
-    velocidad = 1.0f;
+    velocidad = 2.0f;
 
     static float TiempoInicio = GetWorld()->GetTimeSeconds();
     float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
@@ -21,10 +24,6 @@ void ACazaGen02::Mover(float DeltaTime) {
     NewLocation.Y += DesplazamientoHorizontal;
 
     SetActorLocation(NewLocation);
-	//zigzag
-	/*FVector NewLocation = GetActorLocation();
-    NewLocation.Y += FMath::Sin(GetWorld()->GetTimeSeconds() * vel) * GetWorld()->GetDeltaSeconds();
-    SetActorLocation(NewLocation);*/
 }
 void ACazaGen02::Ataque() {
 	//Posicion de spawn del proyectil.

@@ -8,6 +8,7 @@
 #include "Portanave.h"
 #include "RVel.h"
 #include "RArm.h"
+#include "RAll.h"
 #include "NavAll.generated.h"
 
 UCLASS()

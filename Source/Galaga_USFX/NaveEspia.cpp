@@ -6,8 +6,11 @@
 #include "Kismet/GameplayStatics.h"
 
 ANaveEspia::ANaveEspia() {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel1.EnemyLevel1'"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
+	SetActorScale3D(FVector(3.0f,3.0f,3.0f));
+	cadencia = 2.0f;
+	ActDisp = true;
 }
 void ANaveEspia::Mover(float DeltaTime) {
 	velocidad = 2.0f;

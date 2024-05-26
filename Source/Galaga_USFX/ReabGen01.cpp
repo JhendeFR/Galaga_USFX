@@ -4,11 +4,12 @@
 #include "ReabGen01.h"
 
 AReabGen01::AReabGen01() {
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel4.EnemyLevel4'"));
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
+    SetActorRelativeScale3D(FVector(1.5f, 1.5f, 1.5f));
 }
 void AReabGen01::Mover(float DeltaTime) {
-    velocidad = 1.0f;
+    velocidad = 2.0f;
 
     static float TiempoInicio = GetWorld()->GetTimeSeconds();
     float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;

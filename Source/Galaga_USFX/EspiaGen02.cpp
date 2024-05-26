@@ -6,11 +6,14 @@
 #include "Kismet/GameplayStatics.h"
 
 AEspiaGen02::AEspiaGen02() {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Nodriza1.Nodriza1'"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
+	SetActorRelativeScale3D(FVector(0.40f, 0.40f, 0.40f));
+	ActDisp = true;
+	cadencia = 2.0f;
 }
 void AEspiaGen02::Mover(float DeltaTime) {
-	velocidad = 1.0f;
+	velocidad = 2.0f;
 
 	static float TiempoInicio = GetWorld()->GetTimeSeconds();
 	float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;

@@ -5,15 +5,16 @@
 APower_Speed::APower_Speed()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_WideCapsule.Shape_WideCapsule'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Speed.Speed'"));
 	Power->SetStaticMesh(ShipMesh.Object);
+	Power->SetWorldScale3D(FVector(2.0f, 2.0f, 2.0f));
 }
 void APower_Speed::ActPowerUp(AGalaga_USFXPawn* Player) {
 	Player->IncSpeed(50.0f);
 }
 
 void APower_Speed::Movimiento() {
-	 int vel = 100.0f;
+	int vel = 100.0f;
 	FVector NewLocation = GetActorLocation() + -GetActorForwardVector() * vel * GetWorld()->GetDeltaSeconds();
 	SetActorLocation(NewLocation);
 }

@@ -39,15 +39,33 @@ void AGalaga_USFXGameMode::BeginPlay()
 	{
 		AControlEscuadFacade* Escuadrones = GetWorld()->SpawnActor<AControlEscuadFacade>(AControlEscuadFacade::StaticClass());
 		//Generamos las naves.
-		Escuadrones->Escuad_n1();
+		//Escuadrones->Escuad_n1();
+		Escuadrones->Escuad_n2();
+		//Escuadrones->Escuad_n3();
+		//Escuadrones->SupEscuad();
 
 		//Generarmos los power ups.
 		APowerUpFactory* GenPowerUp = World->SpawnActor<APowerUpFactory>();
 		GenPowerUp->CrearPower("Speed");
+		GenPowerUp->CrearPower("Shield");
 
 		Control = World->SpawnActor<AControlDirect>();
 
 		ANavVel* v = World->SpawnActor<ANavVel>();
 		APortaNavControl * j  = Control->getNavControl(v);
+
+
+
+		//Jugador = GetWorld()->SpawnActor<AGalaga_USFXPawn>(AGalaga_USFXPawn::StaticClass());
+		AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
+
+		/*Jugador->Estados("Normal");
+		Jugador->PawnNormal();
+		Jugador->Estados("Lento");
+		Jugador->PawnLenteado();
+		Jugador->Estados("Invisible");
+		Jugador->PawnInvisibiliando();
+		Jugador->Estados("Invencible");
+		Jugador->PawnInvenciblepapidios();*/
 	}
 }

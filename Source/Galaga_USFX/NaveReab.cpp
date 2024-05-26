@@ -4,8 +4,9 @@
 #include "NaveReab.h"
 
 ANaveReab::ANaveReab() {
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel1.EnemyLevel1'"));
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
+    SetActorScale3D(FVector(3.0f, 3.0f, 3.0f));
 }
 void ANaveReab::Mover(float DeltaTime) {
     velocidad = 2.0f;

@@ -3,6 +3,7 @@
 
 #include "PowerUpFactory.h"
 #include "Power_Speed.h"
+#include "Power_Shield.h"
 
 // Sets default values
 APowerUpFactory::APowerUpFactory()
@@ -28,9 +29,14 @@ void APowerUpFactory::Tick(float DeltaTime)
 
 void APowerUpFactory::CrearPower(FString tipo)
 {
-	FVector Posicion = FVector(0.0f, -900.0f, 150.0f);
+	float PosX = FMath::RandRange(-1500.0f, 1500.0f);
+	float PosY = FMath::RandRange(-1500.0f, 1500.0f);
+	FVector Posicion = FVector(PosX, PosY, 150.0f);
 	FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
 	if (tipo == "Speed") {
 		GetWorld()->SpawnActor<APower_Speed>(APower_Speed::StaticClass(), Posicion, Rotacion);
+	}
+	if (tipo == "Shield") {
+		GetWorld()->SpawnActor<APower_Shield>(APower_Shield::StaticClass(), Posicion, Rotacion);
 	}
 }

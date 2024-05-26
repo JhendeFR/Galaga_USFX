@@ -4,11 +4,14 @@
 #include "NaveNodriza.h"
 
 ANaveNodriza::ANaveNodriza() {
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_WideCapsule.Shape_WideCapsule'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Nodriza5.Nodriza5'"));
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
+	SetActorScale3D(FVector(0.50f, 0.50f, 0.50f));
+	cadencia = 2.0f;
+	ActDisp = true;
 }
 void ANaveNodriza::Mover(float DeltaTime) {
-    velocidad = 1.0f;
+    velocidad = 2.0f;
 
     static float TiempoInicio = GetWorld()->GetTimeSeconds();
     float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
@@ -22,6 +25,20 @@ void ANaveNodriza::Vida() {
 
 }
 void ANaveNodriza::Ataque() {
+	//Posicion de spawn del proyectil.
+	FVector SpawnPLocation = GetActorLocation() + (GetActorForwardVector() * 1);
+
+	if (ActDisp == true)
+	{
+		UWorld* World = GetWorld();
+		if (World)
+		{
+			AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
+		}
+		//Activa el temporizador para el siguiente disparo.
+		World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);
+		ActDisp = false; //Desactiva el disparo para que no se dispare continuamente.
+	}
 
 }
 void ANaveNodriza::Bombardear() {

@@ -3,5 +3,7 @@ C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Tr
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveTransp.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Enemy.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Enemy.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Galaga_USFXProjectile.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Galaga_USFXProjectile.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveTransp.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\TranspGen02.generated.h

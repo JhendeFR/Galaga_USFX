@@ -6,11 +6,14 @@
 #include "Kismet/GameplayStatics.h"
 
 ACazaGen01::ACazaGen01() {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel2.EnemyLevel2'"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
+	SetActorRelativeScale3D(FVector(1.5f, 1.5f, 1.5f));
+	ActDisp = true;
+	cadencia = 2.0f;
 }
 void ACazaGen01::Mover(float DeltaTime) { 
-	velocidad = 1.0f;
+	velocidad = 2.0f;
 
 	static float TiempoInicio = GetWorld()->GetTimeSeconds();
 	float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
@@ -19,11 +22,6 @@ void ACazaGen01::Mover(float DeltaTime) {
 	NewLocation.Y += DesplazamientoHorizontal;
 
 	SetActorLocation(NewLocation);
-	//Paravolico
-	/*FVector NewLocation = GetActorLocation();
-    NewLocation.X += vel * FMath::Cos(GetWorld()->GetTimeSeconds()) * GetWorld()->GetDeltaSeconds();
-    NewLocation.Y += vel * FMath::Sin(GetWorld()->GetTimeSeconds()) * GetWorld()->GetDeltaSeconds();
-    SetActorLocation(NewLocation);*/
 }
 void ACazaGen01::Ataque() {
 	//Posicion de spawn del proyectil.
@@ -53,4 +51,5 @@ void ACazaGen01::Escudo() {
 void ACazaGen01::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 	Mover(DeltaTime);
+	Ataque();
 }

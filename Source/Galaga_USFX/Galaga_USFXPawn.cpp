@@ -15,6 +15,7 @@
 #include "EscudoM.h"
 #include "Power_Up.h"
 #include "Power_Speed.h"
+#include "Power_Shield.h"
 #include "ControlDirect.h"
 #include "NavVel.h"
 #include "NavArm.h"
@@ -153,31 +154,47 @@ void AGalaga_USFXPawn::ShotTimerExpired()
 void AGalaga_USFXPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	GetWorld()->GetTimerManager().SetTimer(TimerEsc, this, &AGalaga_USFXPawn::GenEscudo, 15.0f, true);
 }
+
 void AGalaga_USFXPawn::IncSpeed(float vel) {
 		MoveSpeed = MoveSpeed + vel;
 }
+
 void AGalaga_USFXPawn::ResSpeed() {
 	MoveSpeed = 1000.0f;
 }
+
 //Metodo que se llama cuando el objeto coliciona con otro objeto.
 void AGalaga_USFXPawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
-	APower_Speed* poder = Cast<APower_Speed>(Other);
-	if (poder != nullptr) {
-		poder->ActPowerUp(this);
+	APower_Speed* speed = Cast<APower_Speed>(Other);
+	if (speed != nullptr) {
+		speed->ActPowerUp(this);
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Power Up velocidad");
 		GetWorld()->GetTimerManager().SetTimer(TimerSpeed, this, &AGalaga_USFXPawn::ResSpeed, 5.0f, false);
 		FTimerDelegate TimerDel;
-		TimerDel.BindLambda([poder]()
+		TimerDel.BindLambda([speed]()
 			{
-				if (poder && poder->IsValidLowLevel())
+				if (speed && speed->IsValidLowLevel())
 				{
-					poder->Destroy();
+					speed->Destroy();
 				}
 			});
 		GetWorld()->GetTimerManager().SetTimer(TDestroy, TimerDel, 1.0f, false);
+	}
+	APower_Shield* shield = Cast<APower_Shield>(Other);
+	if (shield != nullptr) {
+		//GetWorld()->GetTimerManager().SetTimer(TimerEsc, this, &AGalaga_USFXPawn::GenEscudo, 1.0f, false);
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Trolleado pvto XDXDXDXDXDXD");
+		FTimerDelegate TimerDel2;
+		TimerDel2.BindLambda([shield]()
+			{
+				if (shield && shield->IsValidLowLevel())
+				{
+					shield->Destroy();
+				}
+			});
+		GetWorld()->GetTimerManager().SetTimer(TimerEsc, TimerDel2, 0.1f, false);
 	}
 	ARVel* reabvel = Cast<ARVel>(Other);
 	ARArm* reabarm = Cast<ARArm>(Other);
@@ -197,10 +214,83 @@ void AGalaga_USFXPawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPr
 	}
 }
 
-void AGalaga_USFXPawn::reabvel(float vel)
+void AGalaga_USFXPawn::Estados(FString _Estados)
 {
-	MoveSpeed = vel;
+	if (_Estados.Equals("Normal")) {
+		EstadoNormal = GetWorld()->SpawnActor<AEstadoNormal>(AEstadoNormal::StaticClass());
+		EstadoNormal->SetPawn(this);
+		SetEstado(EstadoNormal);
+	}
+	if (_Estados.Equals("Lento")) {
+		EstadoLento = GetWorld()->SpawnActor<AEstPawnLento>(AEstPawnLento::StaticClass());
+		EstadoLento->SetPawn(this);
+		SetEstado(EstadoLento);
+	}
+	if (_Estados.Equals("Invisible")) {
+		EstadoInvisible = GetWorld()->SpawnActor<AEstPawnInvisible>(AEstPawnInvisible::StaticClass());
+		EstadoInvisible->SetPawn(this);
+		SetEstado(EstadoInvisible);
+	}
+	if (_Estados.Equals("Invencible")) {
+		EstadoInvencible = GetWorld()->SpawnActor<AEstPawnInvencible>(AEstPawnInvencible::StaticClass());
+		EstadoInvencible->SetPawn(this);
+		SetEstado(EstadoInvencible);
+	}
+}
 
+void AGalaga_USFXPawn::SetEstado(IEstadosP* _Estado)
+{
+		Estado = _Estado;
+}
+
+void AGalaga_USFXPawn::PawnNormal()
+{
+	Estado->PawnNormal();
+}
+
+void AGalaga_USFXPawn::PawnLenteado()
+{
+	Estado->PawnLento();
+}
+
+void AGalaga_USFXPawn::PawnInvisibiliando()
+{
+	Estado->PawnInvisible();
+}
+
+void AGalaga_USFXPawn::PawnInvenciblepapidios()
+{
+	Estado->PawnInvencible();
+}
+
+IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoNormal()
+{
+	return EstadoNormal;
+}
+
+IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoLento()
+{
+	return EstadoLento;
+}
+
+IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoInvisible()
+{
+	return EstadoInvisible;
+}
+
+IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoInvencible()
+{
+	return EstadoInvencible;
+}
+
+IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoActual()
+{
+	/*if (Estado) {
+		return "Estado Actual: " + Estado->ObtenerEstado();
+	}
+	else {
+		return "No hay estado actual";
+	}*/
 }
 
 void AGalaga_USFXPawn::GenEscudo() {
@@ -208,7 +298,7 @@ void AGalaga_USFXPawn::GenEscudo() {
 	FVector Location = GetActorLocation() + FVector(100.0f, 0.0f, 0.0f);
 	FRotator Rotation = GetActorRotation();
 	//Crear el escudo.
-	AEscudoM* CrearEscudoM= GetWorld()->SpawnActor<AEscudoM>(AEscudoM::StaticClass(), Location, Rotation);
+	AEscudoM* CrearEscudoM = GetWorld()->SpawnActor<AEscudoM>(AEscudoM::StaticClass(), Location, Rotation);
 	if (CrearEscudoM != nullptr)
 	{
 		CrearEscudoM->SetActorLocation(Location);
@@ -222,7 +312,6 @@ void AGalaga_USFXPawn::GenEscudo() {
 					CrearEscudoM->Destroy();
 				}
 			});
-
 		// Destruccion del actor despues de 5 segundos de aparecer
 		GetWorld()->GetTimerManager().SetTimer(DestruirBarrera, TimerDel, 5.0f, false);
 	}

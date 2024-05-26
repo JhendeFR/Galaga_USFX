@@ -4,13 +4,12 @@
 #include "NaveTransp.h"
 
 ANaveTransp::ANaveTransp() {
-    // Inicializar la malla de la nave caza
-    // Por ejemplo:
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel1.EnemyLevel1'"));
     EnemyMesh->SetStaticMesh(ShipMesh.Object);
+    SetActorScale3D(FVector(3.0f, 3.0f, 3.0f));
 }
 void ANaveTransp::Mover(float DeltaTime) {
-    velocidad = 1.0f;
+    velocidad = 2.0f;
 
     static float TiempoInicio = GetWorld()->GetTimeSeconds();
     float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;

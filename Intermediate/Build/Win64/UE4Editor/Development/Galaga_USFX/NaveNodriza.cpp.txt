@@ -2,4 +2,8 @@ C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Wi
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveNodriza.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Enemy.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Enemy.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\ProjEnemy.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjEnemy.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Galaga_USFXProjectile.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Galaga_USFXProjectile.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveNodriza.generated.h

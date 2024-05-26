@@ -6,8 +6,9 @@
 #include "Kismet/GameplayStatics.h"
 
 ANaveCaza::ANaveCaza() {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel1.EnemyLevel1'"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
+	SetActorScale3D(FVector(3.0f, 3.0f, 3.0f));
 	cadencia = 2.0f; // Cadencia de disparo
 	ActDisp = true;
 }
@@ -53,7 +54,3 @@ void ANaveCaza::Tick(float DeltaTime) {
 void ANaveCaza::BeginPlay() {
 	Super::BeginPlay();
 }
-//void ANaveCaza::TReset_Proj()
-//{
-//	ActDisp = true;
-//}

@@ -3,9 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "EstadosP.h"
+#include "EstadoNormal.h"
+#include "EstPawnLento.h"
+#include "EstPawnInvisible.h"
+#include "EstPawnInvencible.h"
 #include "GameFramework/Character.h"
 #include "Galaga_USFXPawn.generated.h"
 
+//class APortanave;
 UCLASS(Blueprintable)
 class AGalaga_USFXPawn : public APawn
 {
@@ -89,5 +95,26 @@ public:
 	void ResSpeed();
 	UFUNCTION()
 	virtual void NotifyHit(class UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult&Hit) override;
-	void reabvel(float vel);
+public:
+	void Estados(FString _Estados);
+	IEstadosP* Estado;
+	IEstadosP* EstadoNormal;
+	IEstadosP* EstadoLento;
+	IEstadosP* EstadoInvisible;
+	IEstadosP* EstadoInvencible;
+	//Funciones pa cambiar los estados.
+	FORCEINLINE void SetEstado(IEstadosP* _Estado);
+
+	void PawnNormal();
+	void PawnLenteado();
+	void PawnInvisibiliando();
+	void PawnInvenciblepapidios();
+
+	//Funciones para obtener el estado.
+	FORCEINLINE IEstadosP* N_ObtenerEstadoNormal();
+	FORCEINLINE IEstadosP* N_ObtenerEstadoLento();
+	FORCEINLINE IEstadosP* N_ObtenerEstadoInvisible();
+	FORCEINLINE IEstadosP* N_ObtenerEstadoInvencible();
+	FORCEINLINE IEstadosP* N_ObtenerEstadoActual();
+
 };

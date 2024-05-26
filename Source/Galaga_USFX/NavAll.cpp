@@ -30,7 +30,7 @@ void ANavAll::BuildVel()
 	float vel = 1000.0f;
 	FVector Posicion = FVector(700.0f, 500.0f, 200.0f);
 	FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
-	ARVel* n1 = GetWorld()->SpawnActor<ARVel>(Posicion, Rotacion);
+	ARAll* n1 = GetWorld()->SpawnActor<ARAll>(Posicion, Rotacion);
 	FVector Posicion2 = FVector(700.0f, 500.0f, 170.0f);
 	APortanave* n2 = GetWorld()->SpawnActor<APortanave>(Posicion2, Rotacion);
 }
@@ -38,9 +38,6 @@ void ANavAll::BuildVel()
 void ANavAll::BuildArm()
 {
 	int arm = 50;
-	FVector Posicion = FVector(-600.0f, -500.0f, 200.0f);
-	FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
-	ARArm* n1 = GetWorld()->SpawnActor<ARArm>(Posicion, Rotacion);
 }
 
 APortaNavControl* ANavAll::setNavControl()

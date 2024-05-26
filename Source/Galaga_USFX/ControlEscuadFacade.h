@@ -29,8 +29,8 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	FVector Posicion = FVector(0.0f,0.0f, 150.0f);
-	FRotator Rotacion = FRotator(0, 0, 0);
+	FVector Posicion = FVector(0.0f,-800.0f, 150.0f);
+	FRotator Rotacion = FRotator(0, 180, 0);
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -39,4 +39,5 @@ public:
 	void Escuad_n3();
 	void Escuad_n4();
 	void Escuad_n5();
+	void SupEscuad();
 };

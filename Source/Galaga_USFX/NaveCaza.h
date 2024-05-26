@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Enemy.h"
+#include "Galaga_USFXProjectile.h"
 #include "NaveCaza.generated.h"
 
 /**
@@ -32,5 +33,4 @@ public:
 	//Mientras que 'override' asegura que estemos sobreescribiendo una funcion de la clase base.
 	virtual void Tick(float DeltaTime) override;
 	virtual void BeginPlay() override;
-	//FTimerHandle Timer_fin;
 };
