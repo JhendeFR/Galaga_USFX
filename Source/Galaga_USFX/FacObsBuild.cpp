@@ -32,13 +32,38 @@ void AFacObsBuild::GenPortanaves()
 {
 	UWorld* const World = GetWorld();
 	Control = World->SpawnActor<AControlDirect>();
+    int RandomNumber = FMath::RandRange(0, 2);
 
-	/*ANavVel* a = World->SpawnActor<ANavVel>();
-	APortaNavControl* b = Control->getNavControl(a);*/
-
-	ANavArm* c = World->SpawnActor<ANavArm>();
-	APortaNavControl* d = Control->getNavControl(c);
-
-	/*ANavAll* e = World->SpawnActor<ANavAll>();
-	APortaNavControl* f = Control->getNavControl(e);*/
+    switch (RandomNumber)
+    {
+    case 0:
+    {
+        ANavVel* a = World->SpawnActor<ANavVel>();
+        if (a)
+        {
+            APortaNavControl* b = Control->getNavControl(a);
+        }
+        break;
+    }
+    case 1:
+    {
+        ANavArm* c = World->SpawnActor<ANavArm>();
+        if (c)
+        {
+            APortaNavControl* d = Control->getNavControl(c);
+        }
+        break;
+    }
+    case 2:
+    {
+        ANavAll* e = World->SpawnActor<ANavAll>();
+        if (e)
+        {
+            APortaNavControl* f = Control->getNavControl(e);
+        }
+        break;
+    }
+    default:
+        break;
+    }
 }

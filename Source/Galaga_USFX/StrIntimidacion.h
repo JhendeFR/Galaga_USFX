@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Strategy.h"
+#include "NavEstrategica.h"
 #include "GameFramework/Actor.h"
 #include "StrIntimidacion.generated.h"
 
@@ -25,4 +26,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 public:
 	virtual void MovimientoLog(AEnemy* NavEnemy, float DeltaTime) override;
+	class ANavEstrategica* NavI;
+	virtual void SetNavEstrategica(class ANavEstrategica* _NavI);
 };

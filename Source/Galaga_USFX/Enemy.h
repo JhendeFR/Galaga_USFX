@@ -75,6 +75,7 @@ protected:
 public:
 	virtual void TReset_Proj();//Metodo virtual que se encarga de reiniciar el disparo.
 	void AsignarEstrategia(class IStrategy* _Strategy);
+	void CambiarEstrategia(AActor* _Estrategia);
 protected:
 	IStrategy* Strategy;
 };

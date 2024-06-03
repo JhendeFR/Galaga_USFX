@@ -27,6 +27,7 @@ private:
 	bool transportando;
 	float tiempo_descarga;
 	float tiempo_escudo;
+	bool Cambiar;
 
 public:
 	ANaveNodriza();
@@ -69,5 +70,7 @@ public:
 private:
 	UPROPERTY(VisibleAnywhere, Category = "Subscriptor")
 	class AGalaga_USFXPawn* Pawn;
-	
+protected:
+	class AGalaga_USFXPawn* Jugador;
+	class ANaveNodriza* sub2;
 };

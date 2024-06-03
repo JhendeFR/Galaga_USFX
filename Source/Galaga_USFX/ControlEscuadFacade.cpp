@@ -15,6 +15,8 @@ AControlEscuadFacade::AControlEscuadFacade()
 void AControlEscuadFacade::BeginPlay()
 {
 	Super::BeginPlay();
+	//GetWorldTimerManager().SetTimer(TimerHandle_GenPortanaves, this, &AControlEscuadFacade::AsigEstrategy, 5.0f, true, 5.0f);
+	//AsigEstrategy();
 	ElegirEstrategia();
 }
 
@@ -62,17 +64,13 @@ void AControlEscuadFacade::Escuad_n1()
 					FVector PActualNaves = FVector(Posicion.X + i * 300, Posicion.Y + j * 300, Posicion.Z);//Esto solo controla la distancia entre las naves
 					AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, Rotacion);//Esto spawnea las naves en el mundo.
 					Enemigos.Push(NavesInst);//Esto añade las naves al array de enemigos.
+					NumEnemigos++;
 					NavesGeneradas--;//Cada vez que se crea una nave, se reduce el contador de naves disponibles para ese tipo.
 					NavesInst->AsignarEstrategia(Strategy);
 				}
 			}
 		}
 	}
-	/*ElegirEstrategia();
-	for (TActorIterator<AEnemy> It(GetWorld()); It; ++It) {
-		AEnemy* Nave = *It;
-		Nave->AsignarEstrategia(Strategy);
-	}*/
 }
 
 void AControlEscuadFacade::Escuad_n2()
@@ -316,7 +314,28 @@ void AControlEscuadFacade::SupEscuad()
 
 void AControlEscuadFacade::ElegirEstrategia()
 {
-	/*Strategy = NewObject<AStrEstandar>();*/
-	Strategy = NewObject<AStrIntimidacion>();
-	/*Strategy = NewObject<AStrDefensiva>();*/
+	int RandomNumber = FMath::RandRange(0, 2);
+	switch (RandomNumber)
+	{
+		case 0:
+		{
+			Strategy = NewObject<AStrEstandar>();
+			break;
+		}
+		case 1:
+		{
+			Strategy = NewObject<AStrIntimidacion>();
+			break;
+		}
+		case 2:
+		{
+			Strategy = NewObject<AStrDefensiva>();
+			break;
+		}
+	}
+}
+
+void AControlEscuadFacade::EliminarEnemigo(AEnemy* Enemigo)
+{
+	Enemigos.Remove(Enemigo);
 }

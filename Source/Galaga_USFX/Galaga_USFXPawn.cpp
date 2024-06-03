@@ -67,6 +67,7 @@ AGalaga_USFXPawn::AGalaga_USFXPawn()
 	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+	vida = 5;
 	EstadoActual = "Normal";
 }
 
@@ -115,7 +116,7 @@ void AGalaga_USFXPawn::Tick(float DeltaSeconds)
 
 	// Try and fire a shot
 	FireShot(FireDirection);
-	//Observador->Notificar();
+	Observador->Notificar();
 }
 
 void AGalaga_USFXPawn::FireShot(FVector FireDirection)

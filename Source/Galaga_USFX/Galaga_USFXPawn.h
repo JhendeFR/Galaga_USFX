@@ -113,8 +113,11 @@ public:
 	void PawnInvenciblepapidios();
 private:
 	FString EstadoActual;
+	int vida;
 public: 
 	FORCEINLINE FString GetEstadoActual() { return EstadoActual; }
+	FORCEINLINE int GetVida() { return vida; }
+	FORCEINLINE void SetVida(int _vida) { vida = _vida; }
 public:
 	AObservadorNotify* Observador;
 	void subpawn(class AActor* _sub);

@@ -22,7 +22,7 @@ void ANaveEspia::Vida() {
 }
 void ANaveEspia::Ataque() {
 	//Posicion de spawn del proyectil.
-	FVector SpawnPLocation = GetActorLocation() + (GetActorForwardVector() * 1);
+	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f) + (GetActorForwardVector() * 1);
 
 	if (ActDisp == true)
 	{

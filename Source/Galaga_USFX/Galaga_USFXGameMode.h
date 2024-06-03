@@ -26,4 +26,17 @@ protected:
 	class AGalaga_USFXPawn* Jugador;
 	class ANaveNodriza* sub2;
 	class AFacObsBuild* Portanaves;
+	class AControlEscuadFacade* Escuadrones;
+private:
+	FTimerHandle TimerHandle_GenPortanaves;
+	void GenPortanavesRepeatedly();
+public:
+	float time;
+private:
+	class ANavEstrategica* NaveEstrategica;
+
+	class AStrEstandar* EstNavEstandar;
+	class AStrIntimidacion* EstNavIntimidacion;
+	class AStrDefensiva* EstNavDefensiva;
+	FString EstadoPawn;
 };

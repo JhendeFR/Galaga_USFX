@@ -18,6 +18,7 @@
 #include "StrEstandar.h"
 #include "StrIntimidacion.h"
 #include "StrDefensiva.h"
+#include "Galaga_USFXPawn.h"
 #include "ControlEscuadFacade.generated.h"
 
 UCLASS()
@@ -45,6 +46,12 @@ public:
 	void Escuad_n5();
 	void SupEscuad();
 	void ElegirEstrategia();
+	void EliminarEnemigo(AEnemy* Enemigo);
+	FORCEINLINE int GetNumEnemigos() { return NumEnemigos; }
+	FORCEINLINE void SetNumEnemigos(int Num) { NumEnemigos = Num; }
 private:
 	class IStrategy* Strategy;
+	int NumEnemigos;
+	int _ch;
+	class AGalaga_USFXPawn* Jugador;
 };

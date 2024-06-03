@@ -39,16 +39,14 @@ void AProjEnemy::OnHit13(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrim
 }
 void AProjEnemy::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
-	AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(Other);
+	AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	if (Jugador) {
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Colision"));
-	}
-}
-void AProjEnemy::FuncionDeManejoDeColision(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
-{
-	AGalaga_USFXProjectile* proyectil = Cast<AGalaga_USFXProjectile>(OtherActor);
-	if (proyectil) {
 		Destroy();
+		Jugador->SetVida(Jugador->GetVida() - 1);
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Vida: ") + FString::FromInt(Jugador->GetVida()));
+		if (Jugador->GetVida() <= 0) {
+			Jugador->Destroy();
+		}
 	}
 }
 // Called when the game starts or when spawned

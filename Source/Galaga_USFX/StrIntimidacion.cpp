@@ -38,3 +38,8 @@ void AStrIntimidacion::MovimientoLog(AEnemy* NavEnemy, float DeltaTime)
     NavEnemy->SetActorLocation(NewLocation);
 }
 
+void AStrIntimidacion::SetNavEstrategica(ANavEstrategica* _NavI)
+{
+    NavI = Cast<ANavEstrategica>(_NavI);
+}
+

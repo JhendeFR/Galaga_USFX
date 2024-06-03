@@ -2,6 +2,7 @@
 
 
 #include "NaveNodriza.h"
+#include "StrIntimidacion.h"
 
 ANaveNodriza::ANaveNodriza() {
     static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Nodriza5.Nodriza5'"));
@@ -18,15 +19,13 @@ void ANaveNodriza::Mover(float DeltaTime) {
 void ANaveNodriza::BeginPlay()
 {
 	Super::BeginPlay();
-	//Publicador= GetWorld()->SpawnActor<AObservadorNotify>(AObservadorNotify::StaticClass());
-	//Publicador->AgregarObserver(this);
 }
 void ANaveNodriza::Vida() {
 
 }
 void ANaveNodriza::Ataque() {
 	//Posicion de spawn del proyectil.
-	FVector SpawnPLocation = GetActorLocation() + (GetActorForwardVector() * 1);
+	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f) + (GetActorForwardVector() * 1);
 
 	if (ActDisp == true)
 	{

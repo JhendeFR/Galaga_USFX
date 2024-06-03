@@ -1,6 +1,21 @@
 // Copyright Epic Games, Inc. All Rights Reserve
 
 #include "Galaga_USFXProjectile.h"
+#include "Enemy.h"
+#include "NaveCaza.h"
+#include "CazaGen01.h"
+#include "CazaGen02.h"
+#include "NaveEspia.h"
+#include "EspiaGen01.h"
+#include "EspiaGen02.h"
+#include "NaveReab.h"
+#include "ReabGen01.h"
+#include "ReabGen02.h"
+#include "NaveTransp.h"
+#include "TranspGen01.h"
+#include "TranspGen02.h"
+#include "NaveNodriza.h"
+#include "ControlEscuadFacade.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Components/StaticMeshComponent.h"
@@ -46,7 +61,9 @@ void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 
 void AGalaga_USFXProjectile::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
-	/*ANaveCaza* navecaza = Cast<ANaveCaza>(Other);
+	AControlEscuadFacade* Escuadrones = GetWorld()->SpawnActor<AControlEscuadFacade>(AControlEscuadFacade::StaticClass());
+
+	ANaveCaza* navecaza = Cast<ANaveCaza>(Other);
 	ACazaGen01* cazagen1 = Cast<ACazaGen01>(Other);
 	ACazaGen02* cazagen2 = Cast<ACazaGen02>(Other);
 	ANaveEspia* naveespia = Cast<ANaveEspia>(Other);
@@ -89,7 +106,7 @@ void AGalaga_USFXProjectile::NotifyHit(UPrimitiveComponent* MyComp, AActor* Othe
 	if (navetransp != nullptr) {
 		navetransp->Destroy();
 	}
-	if (transpgen1 != nullptr) {
+	if (transpgen1 != nullptr){
 		transpgen1->Destroy();
 	}
 	if (transpgen2 != nullptr) {
@@ -97,5 +114,5 @@ void AGalaga_USFXProjectile::NotifyHit(UPrimitiveComponent* MyComp, AActor* Othe
 	}
 	if (nodriza != nullptr) {
 		nodriza->Destroy();
-	}*/
+	}
 }

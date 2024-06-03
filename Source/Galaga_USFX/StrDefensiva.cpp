@@ -27,14 +27,24 @@ void AStrDefensiva::Tick(float DeltaTime)
 
 void AStrDefensiva::MovimientoLog(AEnemy* NavEnemy, float DeltaTime)
 {
-    float velocidad = 2.0f;
+    float velocidadX = 10.0f; // Velocidad en el eje X
+    float velocidadZ = 5.0f;  // Velocidad en el eje Z
+    float amplitudZ = 1.0f;   // Amplitud del movimiento en el eje Z
     static float TiempoInicio = NavEnemy->GetWorld()->GetTimeSeconds();
-    float DesplazamientoHorizontal = FMath::Sin(NavEnemy->GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
+
+    float DesplazamientoHorizontal = FMath::Sin(NavEnemy->GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidadX;
+    float DesplazamientoVertical = FMath::Cos(NavEnemy->GetWorld()->GetTimeSeconds() - TiempoInicio) * amplitudZ;
 
     FVector NewLocation = NavEnemy->GetActorLocation();
-    NewLocation.X += velocidad; // Movimiento hacia adelante en el eje X
-    NewLocation.Y += DesplazamientoHorizontal; // Movimiento en zig-zag en el eje Y
+    NewLocation.X += velocidadX * DeltaTime; // Movimiento hacia la derecha en el eje X
+    NewLocation.Z += DesplazamientoVertical; // Movimiento vertical en el eje Z
+    NewLocation.Y += DesplazamientoHorizontal; // Movimiento en el eje Y
 
     NavEnemy->SetActorLocation(NewLocation);
+}
+
+void AStrDefensiva::SetNavEstrategica(ANavEstrategica* _NavD)
+{
+    NavD = Cast<ANavEstrategica>(_NavD);
 }
 
