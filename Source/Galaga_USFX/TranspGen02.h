@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "NaveTransp.h"
+#include "Strategy.h"
 #include "Galaga_USFXProjectile.h"
 #include "TranspGen02.generated.h"
 

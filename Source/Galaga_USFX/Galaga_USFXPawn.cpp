@@ -24,6 +24,8 @@
 #include "Portanave.h"
 #include "RVel.h"
 #include "RArm.h"
+#include "RAll.h"
+#include "ProjEnemy.h"
 
 
 const FName AGalaga_USFXPawn::MoveForwardBinding("MoveForward");
@@ -65,7 +67,7 @@ AGalaga_USFXPawn::AGalaga_USFXPawn()
 	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
-	//Escudo
+	EstadoActual = "Normal";
 }
 
 void AGalaga_USFXPawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -113,6 +115,7 @@ void AGalaga_USFXPawn::Tick(float DeltaSeconds)
 
 	// Try and fire a shot
 	FireShot(FireDirection);
+	//Observador->Notificar();
 }
 
 void AGalaga_USFXPawn::FireShot(FVector FireDirection)
@@ -154,6 +157,7 @@ void AGalaga_USFXPawn::ShotTimerExpired()
 void AGalaga_USFXPawn::BeginPlay()
 {
 	Super::BeginPlay();
+	Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
 }
 
 void AGalaga_USFXPawn::IncSpeed(float vel) {
@@ -185,7 +189,7 @@ void AGalaga_USFXPawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPr
 	APower_Shield* shield = Cast<APower_Shield>(Other);
 	if (shield != nullptr) {
 		//GetWorld()->GetTimerManager().SetTimer(TimerEsc, this, &AGalaga_USFXPawn::GenEscudo, 1.0f, false);
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Trolleado pvto XDXDXDXDXDXD");
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Trolleado XDXDXDXDXDXD");
 		FTimerDelegate TimerDel2;
 		TimerDel2.BindLambda([shield]()
 			{
@@ -198,99 +202,103 @@ void AGalaga_USFXPawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPr
 	}
 	ARVel* reabvel = Cast<ARVel>(Other);
 	ARArm* reabarm = Cast<ARArm>(Other);
+	ARAll* reaball = Cast<ARAll>(Other);
 	APortanave* portanave = Cast<APortanave>(Other);
-	if (reabvel != nullptr && reabarm != nullptr) {
-		reabvel->Destroy();
-		reabarm->Destroy();
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "reabastecimiento de velocidad y municion");
-	}
 	if (reabvel != nullptr) {
 		reabvel->Destroy();
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "reabastecimiento de velocidad");
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Eres lento ;C");
+		Jugador->Estados("Lento");
+		Jugador->PawnLenteado();
+
+		//Observador->Notificar();
 	}
 	if (reabarm != nullptr) {
 		reabarm->Destroy();
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "reabastecimiento de municion");
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Donde estas??");
+		Jugador->Estados("Invisible");
+		Jugador->PawnInvisibiliando();
+
+		//Observador->Notificar();
+	}
+	if (reaball != nullptr) {
+		reaball->Destroy();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Eres invencible!!!");
+		Jugador->Estados("Invencible");
+		Jugador->PawnInvenciblepapidios();
+
+		//Observador->Notificar();
+	}
+
+	AProjEnemy* proj = Cast<AProjEnemy>(Other);
+	if (proj != nullptr) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Proyectil enemigo destruido");
 	}
 }
 
 void AGalaga_USFXPawn::Estados(FString _Estados)
 {
+	Observador = GetWorld()->SpawnActor<AObservadorNotify>(AObservadorNotify::StaticClass());
+
 	if (_Estados.Equals("Normal")) {
 		EstadoNormal = GetWorld()->SpawnActor<AEstadoNormal>(AEstadoNormal::StaticClass());
 		EstadoNormal->SetPawn(this);
 		SetEstado(EstadoNormal);
+		EstadoActual = "Normal";
 	}
 	if (_Estados.Equals("Lento")) {
 		EstadoLento = GetWorld()->SpawnActor<AEstPawnLento>(AEstPawnLento::StaticClass());
 		EstadoLento->SetPawn(this);
 		SetEstado(EstadoLento);
+		EstadoActual = "Lento";
 	}
 	if (_Estados.Equals("Invisible")) {
 		EstadoInvisible = GetWorld()->SpawnActor<AEstPawnInvisible>(AEstPawnInvisible::StaticClass());
 		EstadoInvisible->SetPawn(this);
 		SetEstado(EstadoInvisible);
+		EstadoActual = "Invisible";
 	}
 	if (_Estados.Equals("Invencible")) {
 		EstadoInvencible = GetWorld()->SpawnActor<AEstPawnInvencible>(AEstPawnInvencible::StaticClass());
 		EstadoInvencible->SetPawn(this);
 		SetEstado(EstadoInvencible);
+		EstadoActual = "Invencible";
 	}
+	//Observador->Notificar();
 }
 
 void AGalaga_USFXPawn::SetEstado(IEstadosP* _Estado)
 {
-		Estado = _Estado;
+	Estado = _Estado;
 }
 
 void AGalaga_USFXPawn::PawnNormal()
 {
 	Estado->PawnNormal();
+	//Observador->Notificar();
 }
 
 void AGalaga_USFXPawn::PawnLenteado()
 {
 	Estado->PawnLento();
+	//Observador->Notificar();
 }
 
 void AGalaga_USFXPawn::PawnInvisibiliando()
 {
 	Estado->PawnInvisible();
+	//Observador->Notificar();
 }
 
 void AGalaga_USFXPawn::PawnInvenciblepapidios()
 {
 	Estado->PawnInvencible();
+	//Observador->Notificar();
 }
 
-IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoNormal()
+void AGalaga_USFXPawn::subpawn(class AActor* _sub)
 {
-	return EstadoNormal;
-}
-
-IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoLento()
-{
-	return EstadoLento;
-}
-
-IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoInvisible()
-{
-	return EstadoInvisible;
-}
-
-IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoInvencible()
-{
-	return EstadoInvencible;
-}
-
-IEstadosP* AGalaga_USFXPawn::N_ObtenerEstadoActual()
-{
-	/*if (Estado) {
-		return "Estado Actual: " + Estado->ObtenerEstado();
-	}
-	else {
-		return "No hay estado actual";
-	}*/
+	class AActor* sub = Cast<AActor>(_sub);
+	Observador->AgregarObserver(sub);
 }
 
 void AGalaga_USFXPawn::GenEscudo() {

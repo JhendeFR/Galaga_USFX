@@ -1,0 +1,22 @@
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\CazaGen01.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveCaza.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Enemy.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Enemy.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Strategy.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Strategy.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Galaga_USFXProjectile.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Galaga_USFXProjectile.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveCaza.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\CazaGen01.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\ProjEnemy.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjEnemy.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h

@@ -13,15 +13,9 @@ AEspiaGen01::AEspiaGen01() {
 	cadencia = 2.0f;
 }
 void AEspiaGen01::Mover(float DeltaTime) {
-	velocidad = 2.0f;
-
-	static float TiempoInicio = GetWorld()->GetTimeSeconds();
-	float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
-
-	FVector NewLocation = GetActorLocation();
-	NewLocation.Y += DesplazamientoHorizontal;
-
-	SetActorLocation(NewLocation);
+	if (Strategy) {
+		Strategy->MovimientoLog(this, DeltaTime);
+	}
 }
 void AEspiaGen01::Vida() {
 

@@ -2,6 +2,7 @@
 
 
 #include "Enemy.h"
+#include "Strategy.h"
 
 // Iniciando una malla para la clase abstracta enemy.
 AEnemy::AEnemy()
@@ -30,4 +31,9 @@ void AEnemy::Tick(float DeltaTime)
 void AEnemy::TReset_Proj()
 {
 	ActDisp = true;
+}
+
+void AEnemy::AsignarEstrategia(IStrategy* _Strategy)
+{
+	Strategy = _Strategy;
 }

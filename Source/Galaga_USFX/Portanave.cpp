@@ -9,11 +9,11 @@ APortanave::APortanave()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	Portanave = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Plane.Shape_Plane'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/CaveWall.CaveWall'"));
 	Portanave->SetupAttachment(RootComponent);
 	RootComponent = Portanave;
 	Portanave->SetStaticMesh(ShipMesh.Object);
-	SetActorRelativeScale3D(FVector(2.5f, 3.5f, 2.5f));
+	SetActorRelativeScale3D(FVector(0.1f, 0.1f, 0.1f));
 	SetActorEnableCollision(false);
 }
 

@@ -11,15 +11,15 @@ ANaveNodriza::ANaveNodriza() {
 	ActDisp = true;
 }
 void ANaveNodriza::Mover(float DeltaTime) {
-    velocidad = 2.0f;
-
-    static float TiempoInicio = GetWorld()->GetTimeSeconds();
-    float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
-
-    FVector NewLocation = GetActorLocation();
-    NewLocation.Y += DesplazamientoHorizontal;
-
-    SetActorLocation(NewLocation);
+	if (Strategy) {
+		Strategy->MovimientoLog(this, DeltaTime);
+	}
+}
+void ANaveNodriza::BeginPlay()
+{
+	Super::BeginPlay();
+	//Publicador= GetWorld()->SpawnActor<AObservadorNotify>(AObservadorNotify::StaticClass());
+	//Publicador->AgregarObserver(this);
 }
 void ANaveNodriza::Vida() {
 
@@ -56,4 +56,32 @@ void ANaveNodriza::Escudo() {
 void ANaveNodriza::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 	Mover(DeltaTime);
+}
+
+void ANaveNodriza::SetNavenodriza(AGalaga_USFXPawn* _Pawn)
+{
+	if (!_Pawn) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "No se hay un jugador que hiciste!!!");
+	}
+	Pawn = _Pawn;
+	Pawn->subpawn(this);
+}
+
+void ANaveNodriza::Actualizar(class AObservadorNotify* _Publicador)
+{
+	Publicador = _Publicador;
+
+	estad = Pawn->GetEstadoActual();
+	if (estad == "Normal") {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Nave Nodriza: El jugador esta en estado normal");
+	}
+	if (estad == "Lento") {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Nave Nodriza: El jugador esta en estado lento");
+	}
+	if (estad == "Invisible") {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Nave Nodriza: El jugador esta en estado invisible");
+	}
+	if (estad == "Invencible") {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Nave Nodriza: El jugador esta en estado invencible");
+	}
 }

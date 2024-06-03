@@ -8,10 +8,12 @@
 #include "EstPawnLento.h"
 #include "EstPawnInvisible.h"
 #include "EstPawnInvencible.h"
+#include "ObservadorNotify.h"
+#include "FacObsBuild.h"
 #include "GameFramework/Character.h"
 #include "Galaga_USFXPawn.generated.h"
 
-//class APortanave;
+
 UCLASS(Blueprintable)
 class AGalaga_USFXPawn : public APawn
 {
@@ -109,12 +111,13 @@ public:
 	void PawnLenteado();
 	void PawnInvisibiliando();
 	void PawnInvenciblepapidios();
-
-	//Funciones para obtener el estado.
-	FORCEINLINE IEstadosP* N_ObtenerEstadoNormal();
-	FORCEINLINE IEstadosP* N_ObtenerEstadoLento();
-	FORCEINLINE IEstadosP* N_ObtenerEstadoInvisible();
-	FORCEINLINE IEstadosP* N_ObtenerEstadoInvencible();
-	FORCEINLINE IEstadosP* N_ObtenerEstadoActual();
-
+private:
+	FString EstadoActual;
+public: 
+	FORCEINLINE FString GetEstadoActual() { return EstadoActual; }
+public:
+	AObservadorNotify* Observador;
+	void subpawn(class AActor* _sub);
+protected:
+	class AGalaga_USFXPawn* Jugador;
 };

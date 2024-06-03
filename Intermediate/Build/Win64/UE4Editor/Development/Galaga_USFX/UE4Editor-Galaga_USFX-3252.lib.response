@@ -1,0 +1,33 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Galaga_USFX-3252.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\FacObsBuild.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Galaga_USFXGameMode.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Galaga_USFXPawn.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\NavAll.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\NavArm.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\NaveNodriza.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\NavVel.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\ObservadorNotify.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Observer.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Portanave.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\ProjEnemy.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\RVel.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Module.Galaga_USFX.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\FacObsBuild.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Galaga_USFX.init.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Galaga_USFXGameMode.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Galaga_USFXPawn.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\NaveNodriza.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\ObservadorNotify.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Observer.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\ProjEnemy.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Module.Galaga_USFX.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Default.rc2.res"
+/OUT:"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\UE4Editor-Galaga_USFX-3252.lib"

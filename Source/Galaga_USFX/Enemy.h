@@ -74,4 +74,7 @@ protected:
 	void Destruir() PURE_VIRTUAL(AEnemy::Destruir, );
 public:
 	virtual void TReset_Proj();//Metodo virtual que se encarga de reiniciar el disparo.
+	void AsignarEstrategia(class IStrategy* _Strategy);
+protected:
+	IStrategy* Strategy;
 };

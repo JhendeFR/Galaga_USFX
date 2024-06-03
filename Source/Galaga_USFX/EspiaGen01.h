@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "NaveEspia.h"
+#include "Strategy.h"
 #include "Galaga_USFXProjectile.h"
 #include "EspiaGen01.generated.h"
 

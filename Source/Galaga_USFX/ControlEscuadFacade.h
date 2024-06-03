@@ -14,6 +14,10 @@
 #include "TranspGen01.h"
 #include "TranspGen02.h"
 #include "NaveNodriza.h"
+#include "Strategy.h"
+#include "StrEstandar.h"
+#include "StrIntimidacion.h"
+#include "StrDefensiva.h"
 #include "ControlEscuadFacade.generated.h"
 
 UCLASS()
@@ -40,4 +44,7 @@ public:
 	void Escuad_n4();
 	void Escuad_n5();
 	void SupEscuad();
+	void ElegirEstrategia();
+private:
+	class IStrategy* Strategy;
 };

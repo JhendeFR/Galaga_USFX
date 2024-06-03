@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "NaveReab.h"
+#include "Strategy.h"
 #include "Galaga_USFXProjectile.h"
 #include "ReabGen01.generated.h"
 

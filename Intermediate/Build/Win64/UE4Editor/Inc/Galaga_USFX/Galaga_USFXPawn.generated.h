@@ -17,18 +17,18 @@ struct FHitResult;
 #endif
 #define GALAGA_USFX_Galaga_USFXPawn_generated_h
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_SPARSE_DATA
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_RPC_WRAPPERS \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_SPARSE_DATA
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execNotifyHit);
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execNotifyHit);
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_INCLASS_NO_PURE_DECLS \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGalaga_USFXPawn(); \
 	friend struct Z_Construct_UClass_AGalaga_USFXPawn_Statics; \
@@ -37,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(AGalaga_USFXPawn)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_INCLASS \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_INCLASS \
 private: \
 	static void StaticRegisterNativesAGalaga_USFXPawn(); \
 	friend struct Z_Construct_UClass_AGalaga_USFXPawn_Statics; \
@@ -46,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(AGalaga_USFXPawn)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_STANDARD_CONSTRUCTORS \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AGalaga_USFXPawn(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGalaga_USFXPawn) \
@@ -59,7 +59,7 @@ private: \
 public:
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_ENHANCED_CONSTRUCTORS \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AGalaga_USFXPawn(AGalaga_USFXPawn&&); \
@@ -70,33 +70,33 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGalaga_USFXPawn)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_PRIVATE_PROPERTY_OFFSET \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ShipMeshComponent() { return STRUCT_OFFSET(AGalaga_USFXPawn, ShipMeshComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraComponent() { return STRUCT_OFFSET(AGalaga_USFXPawn, CameraComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(AGalaga_USFXPawn, CameraBoom); }
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_15_PROLOG
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_GENERATED_BODY_LEGACY \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_17_PROLOG
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_PRIVATE_PROPERTY_OFFSET \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_SPARSE_DATA \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_RPC_WRAPPERS \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_INCLASS \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_STANDARD_CONSTRUCTORS \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_PRIVATE_PROPERTY_OFFSET \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_SPARSE_DATA \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_RPC_WRAPPERS \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_INCLASS \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_GENERATED_BODY \
+#define Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_PRIVATE_PROPERTY_OFFSET \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_SPARSE_DATA \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_INCLASS_NO_PURE_DECLS \
-	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_18_ENHANCED_CONSTRUCTORS \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_PRIVATE_PROPERTY_OFFSET \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_SPARSE_DATA \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_INCLASS_NO_PURE_DECLS \
+	Galaga_USFX_Source_Galaga_USFX_Galaga_USFXPawn_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

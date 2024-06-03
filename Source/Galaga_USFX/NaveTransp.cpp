@@ -9,15 +9,9 @@ ANaveTransp::ANaveTransp() {
     SetActorScale3D(FVector(3.0f, 3.0f, 3.0f));
 }
 void ANaveTransp::Mover(float DeltaTime) {
-    velocidad = 2.0f;
-
-    static float TiempoInicio = GetWorld()->GetTimeSeconds();
-    float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
-
-    FVector NewLocation = GetActorLocation();
-    NewLocation.Y += DesplazamientoHorizontal;
-
-    SetActorLocation(NewLocation);
+    if (Strategy) {
+        Strategy->MovimientoLog(this, DeltaTime);
+    }
 }
 void ANaveTransp::Vida() {
 

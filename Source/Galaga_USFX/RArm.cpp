@@ -9,10 +9,11 @@ ARArm::ARArm()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	RArm = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Wedge_B.Shape_Wedge_B'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/BulletAmmunition2.BulletAmmunition2'"));
 	RArm->SetupAttachment(RootComponent);
 	RootComponent = RArm;
 	RArm->SetStaticMesh(ShipMesh.Object);
+	SetActorRelativeScale3D(FVector(4.0f, 4.0f, 4.0f));
 }
 
 // Called when the game starts or when spawned

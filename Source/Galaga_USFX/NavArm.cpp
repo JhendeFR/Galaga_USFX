@@ -27,15 +27,14 @@ void ANavArm::Tick(float DeltaTime)
 
 void ANavArm::BuildVel()
 {
-	float vel = 0.0f;
+
 }
 void ANavArm::BuildArm()
 {
-	int arm = 50;
-	FVector Posicion = FVector(10.0f, 10.0f, 200.0f);
+	FVector Posicion = FVector(-1750.0f, -1750.0f, 170.0f);
 	FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
 	ARArm* n1 = GetWorld()->SpawnActor<ARArm>(Posicion, Rotacion);
-	FVector Posicion2 = FVector(0.0f, 0.0f, 170.0f);
+	FVector Posicion2 = FVector(-1750.0f, -1750.0f, 170.0f);
 	APortanave* n2 = GetWorld()->SpawnActor<APortanave>(Posicion2, Rotacion);
 }
 

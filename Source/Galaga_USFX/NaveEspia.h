@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Enemy.h"
+#include "Strategy.h"
 #include "NaveEspia.generated.h"
 
 /**

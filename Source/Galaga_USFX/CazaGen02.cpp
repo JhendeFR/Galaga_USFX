@@ -15,15 +15,9 @@ ACazaGen02::ACazaGen02() {
 	BombDist = 100.0f;
 }
 void ACazaGen02::Mover(float DeltaTime) {
-    velocidad = 2.0f;
-
-    static float TiempoInicio = GetWorld()->GetTimeSeconds();
-    float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
-
-    FVector NewLocation = GetActorLocation();
-    NewLocation.Y += DesplazamientoHorizontal;
-
-    SetActorLocation(NewLocation);
+	if (Strategy) {
+		Strategy->MovimientoLog(this, DeltaTime);
+	}
 }
 void ACazaGen02::Ataque() {
 	//Posicion de spawn del proyectil.

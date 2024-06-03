@@ -15,7 +15,7 @@ AControlEscuadFacade::AControlEscuadFacade()
 void AControlEscuadFacade::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	ElegirEstrategia();
 }
 
 // Called every frame
@@ -63,10 +63,16 @@ void AControlEscuadFacade::Escuad_n1()
 					AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, Rotacion);//Esto spawnea las naves en el mundo.
 					Enemigos.Push(NavesInst);//Esto añade las naves al array de enemigos.
 					NavesGeneradas--;//Cada vez que se crea una nave, se reduce el contador de naves disponibles para ese tipo.
+					NavesInst->AsignarEstrategia(Strategy);
 				}
 			}
 		}
 	}
+	/*ElegirEstrategia();
+	for (TActorIterator<AEnemy> It(GetWorld()); It; ++It) {
+		AEnemy* Nave = *It;
+		Nave->AsignarEstrategia(Strategy);
+	}*/
 }
 
 void AControlEscuadFacade::Escuad_n2()
@@ -98,6 +104,7 @@ void AControlEscuadFacade::Escuad_n2()
 					AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, Rotacion);//Esto spawnea las naves en el mundo.
 					Enemigos.Push(NavesInst);//Esto añade las naves al array de enemigos.
 					NavesGeneradas--;//Cada vez que se crea una nave, se reduce el contador de naves disponibles para ese tipo.
+					NavesInst->AsignarEstrategia(Strategy);
 				}
 			}
 		}
@@ -134,6 +141,7 @@ void AControlEscuadFacade::Escuad_n3()
 					AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, Rotacion);//Esto spawnea las naves en el mundo.
 					Enemigos.Push(NavesInst);//Esto añade las naves al array de enemigos.
 					NavesGeneradas--;//Cada vez que se crea una nave, se reduce el contador de naves disponibles para ese tipo.
+					NavesInst->AsignarEstrategia(Strategy);
 				}
 			}
 		}
@@ -186,6 +194,7 @@ void AControlEscuadFacade::Escuad_n4()
 					AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, Rotacion);//Esto spawnea las naves en el mundo.
 					Enemigos.Push(NavesInst);//Esto añade las naves al array de enemigos.
 					NavesGeneradas--;//Cada vez que se crea una nave, se reduce el contador de naves disponibles para ese tipo.
+					NavesInst->AsignarEstrategia(Strategy);
 				}
 			}
 		}
@@ -240,6 +249,7 @@ void AControlEscuadFacade::Escuad_n5()
 					AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, Rotacion);//Esto spawnea las naves en el mundo.
 					Enemigos.Push(NavesInst);//Esto añade las naves al array de enemigos.
 					NavesGeneradas--;//Cada vez que se crea una nave, se reduce el contador de naves disponibles para ese tipo.
+					NavesInst->AsignarEstrategia(Strategy);
 				}
 			}
 		}
@@ -297,8 +307,16 @@ void AControlEscuadFacade::SupEscuad()
 					AEnemy* NavesInst = World->SpawnActor<AEnemy>(TipoNavAlea, PActualNaves, Rotacion);//Esto spawnea las naves en el mundo.
 					Enemigos.Push(NavesInst);//Esto añade las naves al array de enemigos.
 					NavesGeneradas--;//Cada vez que se crea una nave, se reduce el contador de naves disponibles para ese tipo.
+					NavesInst->AsignarEstrategia(Strategy);
 				}
 			}
 		}
 	}
+}
+
+void AControlEscuadFacade::ElegirEstrategia()
+{
+	/*Strategy = NewObject<AStrEstandar>();*/
+	Strategy = NewObject<AStrIntimidacion>();
+	/*Strategy = NewObject<AStrDefensiva>();*/
 }

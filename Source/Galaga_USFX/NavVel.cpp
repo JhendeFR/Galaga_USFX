@@ -27,16 +27,14 @@ void ANavVel::Tick(float DeltaTime)
 void ANavVel::BuildVel()
 {
 	float vel = 1000.0f;
-	//Player->reabvel(vel);
-	FVector Posicion = FVector(-700.0f, -500.0f, 170.0f);
+	FVector Posicion = FVector(-1750.0f, -1750.0f, 170.0f);
 	FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
 	ARVel* n1 = GetWorld()->SpawnActor<ARVel>(Posicion, Rotacion);
-	FVector Posicion2 = FVector(-700.0f, -500.0f, 170.0f);
+	FVector Posicion2 = FVector(-1750.0f, -1750.0f, 170.0f);
 	APortanave* n2 = GetWorld()->SpawnActor<APortanave>(Posicion2, Rotacion);
 }
 void ANavVel::BuildArm()
 {
-	int arm = 0;
 }
 
 APortaNavControl* ANavVel::setNavControl()

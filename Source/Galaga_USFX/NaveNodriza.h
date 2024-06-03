@@ -5,6 +5,10 @@
 #include "CoreMinimal.h"
 #include "Enemy.h"
 #include "ProjEnemy.h"
+#include "Galaga_USFXPawn.h"
+#include "Observer.h"
+#include "ObservadorNotify.h"
+#include "Strategy.h"
 #include "Galaga_USFXProjectile.h"
 #include "NaveNodriza.generated.h"
 
@@ -12,7 +16,7 @@
  * 
  */
 UCLASS()
-class GALAGA_USFX_API ANaveNodriza : public AEnemy
+class GALAGA_USFX_API ANaveNodriza : public AEnemy, public IObserver
 {
 	GENERATED_BODY()
 private:
@@ -47,6 +51,7 @@ public:
 	FORCEINLINE void GetTiempo_escudo(float _tiempo_escudo) { tiempo_escudo = _tiempo_escudo; }
 protected:
 	virtual void Mover(float DeltaTime);
+	virtual void BeginPlay() override;
 	virtual void Vida();
 	virtual void Ataque();
 	virtual void Bombardear();
@@ -55,4 +60,14 @@ protected:
 	virtual void Escudo();
 public:
 	virtual void Tick(float DeltaTime) override;
+public:
+	void SetNavenodriza(AGalaga_USFXPawn* _Pawn);
+	virtual void Actualizar(class AObservadorNotify* _Publicador) override;
+	FString estad;
+	class AObservadorNotify* Publicador;
+
+private:
+	UPROPERTY(VisibleAnywhere, Category = "Subscriptor")
+	class AGalaga_USFXPawn* Pawn;
+	
 };

@@ -14,6 +14,9 @@
 #include "Portanave.h"
 #include "RVel.h"
 #include "RArm.h"
+#include "RAll.h"
+#include "FacObsBuild.h"
+#include "Kismet/GameplayStatics.h"
 
 
 
@@ -39,8 +42,8 @@ void AGalaga_USFXGameMode::BeginPlay()
 	{
 		AControlEscuadFacade* Escuadrones = GetWorld()->SpawnActor<AControlEscuadFacade>(AControlEscuadFacade::StaticClass());
 		//Generamos las naves.
-		//Escuadrones->Escuad_n1();
-		Escuadrones->Escuad_n2();
+		Escuadrones->Escuad_n1();
+		//Escuadrones->Escuad_n2();
 		//Escuadrones->Escuad_n3();
 		//Escuadrones->SupEscuad();
 
@@ -49,23 +52,28 @@ void AGalaga_USFXGameMode::BeginPlay()
 		GenPowerUp->CrearPower("Speed");
 		GenPowerUp->CrearPower("Shield");
 
-		Control = World->SpawnActor<AControlDirect>();
-
-		ANavVel* v = World->SpawnActor<ANavVel>();
-		APortaNavControl * j  = Control->getNavControl(v);
-
-
-
 		//Jugador = GetWorld()->SpawnActor<AGalaga_USFXPawn>(AGalaga_USFXPawn::StaticClass());
-		AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
+		Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
 
-		/*Jugador->Estados("Normal");
+		Jugador->Estados("Normal");
 		Jugador->PawnNormal();
-		Jugador->Estados("Lento");
-		Jugador->PawnLenteado();
-		Jugador->Estados("Invisible");
-		Jugador->PawnInvisibiliando();
-		Jugador->Estados("Invencible");
+		/*Jugador->Estados("Lento");
+		Jugador->PawnLenteado();*/
+		/*Jugador->Estados("Invisible");
+		Jugador->PawnInvisibiliando();*/
+		/*Jugador->Estados("Invencible");
 		Jugador->PawnInvenciblepapidios();*/
+		Portanaves = GetWorld()->SpawnActor<AFacObsBuild>(AFacObsBuild::StaticClass());
+		Portanaves->GenPortanaves();
+
+		sub2 = GetWorld()->SpawnActor<ANaveNodriza>(ANaveNodriza::StaticClass());
+		sub2->SetNavenodriza(Jugador);
 	}
 }
+
+void AGalaga_USFXGameMode::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	//sub2->Actualizar(sub2->Publicador);
+}
+

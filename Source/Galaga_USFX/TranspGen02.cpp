@@ -9,15 +9,9 @@ ATranspGen02::ATranspGen02() {
     SetActorRelativeScale3D(FVector(0.40f, 0.40f, 0.40f));
 }
 void ATranspGen02::Mover(float DeltaTime) {
-    velocidad = 2.0f;
-
-    static float TiempoInicio = GetWorld()->GetTimeSeconds();
-    float DesplazamientoHorizontal = FMath::Sin(GetWorld()->GetTimeSeconds() - TiempoInicio) * velocidad;
-
-    FVector NewLocation = GetActorLocation();
-    NewLocation.Y += DesplazamientoHorizontal;
-
-    SetActorLocation(NewLocation);
+    if (Strategy) {
+        Strategy->MovimientoLog(this, DeltaTime);
+    }
 }
 void ATranspGen02::Vida() {
 
