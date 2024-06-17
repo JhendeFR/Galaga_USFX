@@ -21,6 +21,9 @@
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Engine/StaticMesh.h"
+#include "TimerManager.h"
+#include "Engine/World.h"
+#include "EngineUtils.h"
 
 AGalaga_USFXProjectile::AGalaga_USFXProjectile() 
 {
@@ -61,7 +64,23 @@ void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 
 void AGalaga_USFXProjectile::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
-	AControlEscuadFacade* Escuadrones = GetWorld()->SpawnActor<AControlEscuadFacade>(AControlEscuadFacade::StaticClass());
+	AControlEscuadFacade* Escuadrones = nullptr;
+	for (TActorIterator<AControlEscuadFacade> It(GetWorld()); It; ++It)
+	{
+		Escuadrones = *It;
+		break;
+	}
+
+	if (Escuadrones)
+	{
+		AEnemy* Enemy = Cast<AEnemy>(Other);
+		if (Enemy)
+		{
+			Enemy->Destroy();
+			Escuadrones->NaveDestruida(Enemy);
+		}
+	}
+	/*AControlEscuadFacade* Escuadrones = GetWorld()->SpawnActor<AControlEscuadFacade>(AControlEscuadFacade::StaticClass());
 
 	ANaveCaza* navecaza = Cast<ANaveCaza>(Other);
 	ACazaGen01* cazagen1 = Cast<ACazaGen01>(Other);
@@ -114,5 +133,6 @@ void AGalaga_USFXProjectile::NotifyHit(UPrimitiveComponent* MyComp, AActor* Othe
 	}
 	if (nodriza != nullptr) {
 		nodriza->Destroy();
-	}
+	}*/
+	
 }

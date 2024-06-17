@@ -2,6 +2,7 @@
 
 
 #include "Bomb.h"
+#include "Galaga_USFXPawn.h"
 
 // Sets default values
 ABomb::ABomb()
@@ -13,9 +14,9 @@ ABomb::ABomb()
 	BombMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	BombMesh->SetupAttachment(RootComponent);
 	RootComponent = BombMesh;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Projectile.Projectile'"));
 	BombMesh->SetStaticMesh(ShipMesh.Object);
-
+	SetActorRelativeScale3D(FVector(2.5f, 2.5f, 2.5f));
 
 }
 
@@ -30,6 +31,25 @@ void ABomb::BeginPlay()
 void ABomb::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	Mover();
+}
 
+void ABomb::Mover()
+{
+	FVector NewLocation = GetActorLocation() + -GetActorForwardVector() * 250 * GetWorld()->GetDeltaSeconds();
+	SetActorLocation(NewLocation);
+}
+
+void ABomb::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
+{
+	AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
+	if (Jugador) {
+		Destroy();
+		Jugador->SetVida(Jugador->GetVida() - 5);
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Vida: ") + FString::FromInt(Jugador->GetVida()));
+		if (Jugador->GetVida() <= 0) {
+			Jugador->Destroy();
+		}
+	}
 }
 

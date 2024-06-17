@@ -19,54 +19,25 @@ void ACazaGen02::Mover(float DeltaTime) {
 		Strategy->MovimientoLog(this, DeltaTime);
 	}
 }
-void ACazaGen02::Ataque() {
-	//Posicion de spawn del proyectil.
-	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f) + (GetActorForwardVector() * 1);
-
-	if (ActDisp == true)
-	{
-		UWorld* World = GetWorld();
-		if (World)
-		{
-			AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
-		}
-		//Activa el temporizador para el siguiente disparo.
-		World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);
-		ActDisp = false; //Desactiva el disparo para que no se dispare continuamente.
-	}
-}
-void ACazaGen02::Vida() {
-
-}
-void ACazaGen02::Bombardear() {
-
-}
-void ACazaGen02::Cargar_Sbomba() {
-
-}
-void ACazaGen02::Super_Bomba() {
-	
-	FVector SpawnEsc = GetActorLocation() + GetActorForwardVector() * BombDist;
-
-	ABomb* Bomba = GetWorld()->SpawnActor<ABomb>(ABomb::StaticClass(), SpawnEsc, GetActorRotation());
-	int aleNum= FMath::RandRange(0, 5);
-	if (aleNum == 2) {
-		GetWorld()->GetTimerManager().SetTimer(BombActivar, this, &ACazaGen02::Super_Bomba, 10.0f, true);
-	}
-	GetWorld()->GetTimerManager().SetTimer(BombDesactivar, [Bomba]()
-		{
-			if (Bomba)
-			{
-				Bomba->Destroy();
-			}
-		}, 6.0f, true);
-}
 
 void ACazaGen02::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 	Mover(DeltaTime);
+	Ataque();
+	//Super_Bomba();
 }
 void ACazaGen02::BeginPlay() {
 	Super::BeginPlay();
-	Super_Bomba();
+}
+
+void ACazaGen02::ModAttack()
+{
+	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f);
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		// Central shot
+		//World->SpawnActor<AProjEnemy>(SpawnPLocation + (GetActorForwardVector() * 1), FRotator::ZeroRotator);
+		World->SpawnActor<ABomb>(ABomb::StaticClass(), SpawnPLocation + (GetActorForwardVector() * 1), FRotator::ZeroRotator);
+	}
 }

@@ -9,10 +9,6 @@
 #include "CazaGen02.h"
 #include "EspiaGen01.h"
 #include "EspiaGen02.h"
-#include "ReabGen01.h"
-#include "ReabGen02.h"
-#include "TranspGen01.h"
-#include "TranspGen02.h"
 #include "NaveNodriza.h"
 #include "Strategy.h"
 #include "StrEstandar.h"
@@ -39,19 +35,12 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void Escuad_n1();
-	void Escuad_n2();
-	void Escuad_n3();
-	void Escuad_n4();
-	void Escuad_n5();
-	void SupEscuad();
+	void EscuadEjemploTM();
 	void ElegirEstrategia();
-	void EliminarEnemigo(AEnemy* Enemigo);
-	FORCEINLINE int GetNumEnemigos() { return NumEnemigos; }
-	FORCEINLINE void SetNumEnemigos(int Num) { NumEnemigos = Num; }
+	UFUNCTION()
+	void NaveDestruida(AActor* DestroyedActor);
 private:
 	class IStrategy* Strategy;
-	int NumEnemigos;
-	int _ch;
 	class AGalaga_USFXPawn* Jugador;
+	void VerificarEscuadron();
 };

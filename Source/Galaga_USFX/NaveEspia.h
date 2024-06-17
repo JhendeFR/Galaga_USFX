@@ -26,9 +26,9 @@ public:
 	FORCEINLINE void SetTiempo_Invisibilidad(float _tiempo_invisibilidad) { tiempo_invisibilidad = _tiempo_invisibilidad; }
 protected:
 	virtual void Mover(float DeltaTime);
-	virtual void Vida();
-	virtual void Ataque();
 	virtual void Ocultar();
 public:
 	virtual void Tick(float DeltaTime) override;
+protected:
+	void ModAttack() override;
 };

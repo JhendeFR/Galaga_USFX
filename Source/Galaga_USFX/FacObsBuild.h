@@ -22,7 +22,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 public:
-	void GenPortanaves();
+	void GenPortanaves();//Creo que este metodo se encarga de generar los portanaves de forma aleatoria (no recuerdo si tengo otra clase para eso XD).
+	void VerificarPortanaves();
 public:
 	class AControlDirect* Control;
 };

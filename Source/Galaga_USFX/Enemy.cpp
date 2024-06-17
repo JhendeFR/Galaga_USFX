@@ -28,6 +28,22 @@ void AEnemy::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+void AEnemy::Ataque()
+{
+
+	if (ActDisp == true)
+	{
+		UWorld* World = GetWorld();
+		if (World)
+		{
+			ModAttack();
+		}
+		//Activa el temporizador para el siguiente disparo.
+		World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);
+		ActDisp = false; //Desactiva el disparo para que no se dispare continuamente.
+	}
+}
+
 void AEnemy::TReset_Proj()
 {
 	ActDisp = true;

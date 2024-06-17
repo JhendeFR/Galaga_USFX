@@ -39,6 +39,13 @@ void ANavEstrategica::Ataque()
 		if (World)
 		{
 			AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
+			/*AProjEnemy* NewProj2 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(0.0f, 90.0f, 0.0f));
+			AProjEnemy* NewProj3 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(180.0f, 0.0f, 0.0f));
+			AProjEnemy* NewProj4 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(0.0f, 270.0f, 0.0f));
+			AProjEnemy* NewProj5 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(0.0f, 45.0f, 0.0f));
+			AProjEnemy* NewProj6 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(0.0f, 135.0f, 0.0f));
+			AProjEnemy* NewProj7 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(0.0f, 225.0f, 0.0f));
+			AProjEnemy* NewProj8 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(0.0f, 315.0f, 0.0f));*/
 		}
 		//Activa el temporizador para el siguiente disparo.
 		World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);

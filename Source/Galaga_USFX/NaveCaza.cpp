@@ -17,29 +17,6 @@ void ANaveCaza::Mover(float DeltaTime) {
         Strategy->MovimientoLog(this, DeltaTime);
     }
 }
-void ANaveCaza::Ataque()
-{
-    //Posicion de spawn del proyectil.
-    FVector SpawnPLocation = GetActorLocation()+FVector(0.0f,0.0f,60.0f) + (GetActorForwardVector() * 1);
-
-    if (ActDisp == true)
-    {
-        UWorld* World = GetWorld();
-        if (World)
-        {
-            AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
-        }
-		//Activa el temporizador para el siguiente disparo.
-        World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);
-        ActDisp = false; //Desactiva el disparo para que no se dispare continuamente.
-    }
-}
-void ANaveCaza::Vida() {
-
-}
-void ANaveCaza::Bombardear() {
-
-}
 void ANaveCaza::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 	Mover(DeltaTime);
@@ -47,4 +24,14 @@ void ANaveCaza::Tick(float DeltaTime) {
 }
 void ANaveCaza::BeginPlay() {
 	Super::BeginPlay();
+}
+
+void ANaveCaza::ModAttack()
+{
+	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f) + (GetActorForwardVector() * 1);
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
+	}
 }

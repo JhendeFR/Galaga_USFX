@@ -48,16 +48,13 @@ void AGalaga_USFXGameMode::BeginPlay()
 
 		Jugador->Estados("Normal");
 		Jugador->PawnNormal();
+
 		Escuadrones = GetWorld()->SpawnActor<AControlEscuadFacade>(AControlEscuadFacade::StaticClass());
-		//Generamos las naves.
-		Escuadrones->Escuad_n1();
-		//Escuadrones->Escuad_n2();
-		//Escuadrones->Escuad_n3();
-		//Escuadrones->SupEscuad();
+		Escuadrones->EscuadEjemploTM();
 		//Escuadrones->ElegirEstrategia();
-		// 
+		 
 		//Nave para el patron strategy.
-		NaveEstrategica = GetWorld()->SpawnActor<ANavEstrategica>(FVector(-300.0f, 100.0f, 150.0f), FRotator(0.0f,180.0,0.0));
+		//NaveEstrategica = GetWorld()->SpawnActor<ANavEstrategica>(FVector(-300.0f, 100.0f, 150.0f), FRotator(0.0f,180.0,0.0));
 
 		//Generarmos los power ups.
 		APowerUpFactory* GenPowerUp = World->SpawnActor<APowerUpFactory>();
@@ -70,9 +67,9 @@ void AGalaga_USFXGameMode::BeginPlay()
 
 		/*sub2 = GetWorld()->SpawnActor<ANaveNodriza>(ANaveNodriza::StaticClass());
 		sub2->SetNavenodriza(Jugador);*/
-		EstNavEstandar = GetWorld()->SpawnActor<AStrEstandar>(AStrEstandar::StaticClass());
+		/*EstNavEstandar = GetWorld()->SpawnActor<AStrEstandar>(AStrEstandar::StaticClass());
 		EstNavIntimidacion = GetWorld()->SpawnActor<AStrIntimidacion>(AStrIntimidacion::StaticClass());
-		EstNavDefensiva = GetWorld()->SpawnActor<AStrDefensiva>(AStrDefensiva::StaticClass());
+		EstNavDefensiva = GetWorld()->SpawnActor<AStrDefensiva>(AStrDefensiva::StaticClass());*/
 
 	}
 }
@@ -84,8 +81,8 @@ void AGalaga_USFXGameMode::Tick(float DeltaTime)
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Numero de Enemigos: %d"), NumeroDeEnemigos));
 	time += DeltaTime;
 	EstadoPawn = Jugador->GetEstadoActual();
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Tiempo: %f"), time));
-	if(time >= 0.0f)
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Tiempo: %f"), time));
+	/*if(time >= 0.0f)
 	{
 		NaveEstrategica->CambiarEstrategia(EstNavEstandar);
 		NaveEstrategica->AplicarEstrategia(DeltaTime);
@@ -99,7 +96,7 @@ void AGalaga_USFXGameMode::Tick(float DeltaTime)
 	{
 		NaveEstrategica->CambiarEstrategia(EstNavDefensiva);
 		NaveEstrategica->AplicarEstrategia(DeltaTime);
-	}
+	}*/
 
 }
 

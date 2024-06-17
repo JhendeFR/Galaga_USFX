@@ -54,7 +54,6 @@ protected:
 	virtual void Mover(float DeltaTime);
 	virtual void BeginPlay() override;
 	virtual void Vida();
-	virtual void Ataque();
 	virtual void Bombardear();
 	virtual void Ocultar();
 	virtual void Descargar();
@@ -73,4 +72,6 @@ private:
 protected:
 	class AGalaga_USFXPawn* Jugador;
 	class ANaveNodriza* sub2;
+protected:
+	void ModAttack() override;
 };

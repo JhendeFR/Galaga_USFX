@@ -5,10 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "Galaga_USFXGameMode.generated.h"
-//Declarar las clases para generar punteros a los objetos de las clases que utilizaremos.
-//Recordar no usar AEnemy por terminos de abstraccion.
-//UCLASS es un Macro de que delara que la clase siguente podra ser manipulada por el motor grafico.
-//Se le pasa el parametro 'MinimalAPI' en referencia al nivel de acceso de la API.
+
 UCLASS(MinimalAPI)
 class AGalaga_USFXGameMode : public AGameModeBase //La clase es una Subcalse de AGameModeBase.
 {

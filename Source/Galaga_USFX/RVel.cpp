@@ -2,6 +2,9 @@
 
 
 #include "RVel.h"
+#include "Galaga_USFXPawn.h"
+#include "Engine/World.h"
+#include "TimerManager.h"
 
 // Sets default values
 ARVel::ARVel()
@@ -28,5 +31,23 @@ void ARVel::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void ARVel::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
+{
+	AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
+	if (Jugador) {
+		Destroy();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Eres lento ;C");
+		Jugador->Estados("Lento");
+		Jugador->PawnLenteado();
+
+		FTimerHandle TimerHandle;
+		GetWorld()->GetTimerManager().SetTimer(TimerHandle, [Jugador]() {
+			Jugador->Estados("Normal");
+			Jugador->PawnNormal();
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Volviste a la normalidad");
+			}, 6.0f, false);
+	}
 }
 

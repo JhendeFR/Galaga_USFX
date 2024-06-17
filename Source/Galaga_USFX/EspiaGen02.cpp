@@ -17,32 +17,23 @@ void AEspiaGen02::Mover(float DeltaTime) {
 		Strategy->MovimientoLog(this, DeltaTime);
 	}
 }
-void AEspiaGen02::Vida() {
-
-}
-void AEspiaGen02::Ataque() {
-	//Posicion de spawn del proyectil.
-	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f) + (GetActorForwardVector() * 1);
-
-	if (ActDisp == true)
-	{
-		UWorld* World = GetWorld();
-		if (World)
-		{
-			AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
-		}
-		//Activa el temporizador para el siguiente disparo.
-		World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);
-		ActDisp = false; //Desactiva el disparo para que no se dispare continuamente.
-	}
-}
 void AEspiaGen02::Ocultar() {
-
+	SetActorHiddenInGame(true);
 }
 void AEspiaGen02::Velocidadplus() {
-
+	velocidad = 3.5f;
 }
 void AEspiaGen02::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 	Mover(DeltaTime);
+}
+
+void AEspiaGen02::ModAttack()
+{
+	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f) + (GetActorForwardVector() * 1);
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
+	}
 }

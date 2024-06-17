@@ -19,37 +19,28 @@ public:
 	
 protected:
 	//Propiedades generales de la clase.
-	int ataque;
 	float cadencia;
-	int vida;
 	FVector posicion;
 	FVector desplazamiento;
 	float velocidad;
 	float destruir;
-	float escapar;
 	float ProjDist;
 	bool ActDisp;
 	FVector GunOffset;
 	FTimerHandle Timer_fin;
 public:
 	//Al ser propiedades protegidas es necesario crear metodos para poder leer (Get) y modificar (Set) las propiedades anteriores.
-	FORCEINLINE int Getataque() const { return ataque; }
 	FORCEINLINE float Getcadencia() const { return cadencia; }
-	FORCEINLINE int Getvida() const { return vida; }
 	FORCEINLINE FVector Getposicion() const { return posicion; }
 	FORCEINLINE FVector Getdesplazamiento() const { return desplazamiento; }
 	FORCEINLINE float Getvelocidad() const { return velocidad; }
 	FORCEINLINE float Getdesrtuir() const { return destruir; }
-	FORCEINLINE float Getescapar() const { return escapar; }
 
-	FORCEINLINE void Setataque(int _ataque) { ataque = _ataque; }
 	FORCEINLINE void Setcadencia(float _cadencia) { cadencia = _cadencia; }
-	FORCEINLINE void Setvida(int _vida) { vida = _vida; }
 	FORCEINLINE void Setposicion(FVector _posicion) { posicion = _posicion; }
 	FORCEINLINE void Setdesplazamiento(FVector _desplazamiento) { desplazamiento = _desplazamiento; }
 	FORCEINLINE void Setvelocidad(float _velocidad) { velocidad = _velocidad; }
 	FORCEINLINE void Setdestruir(float _destruir) { destruir = _destruir; }
-	FORCEINLINE void Setescapar(float _escapar) { escapar = _escapar; }
 
 public:
 	AEnemy(); //Este consturctor al no tener implementacion no hace mas de lo que haria el constructor de la clase 'AActor' (la clase base de 'AEnemy').
@@ -67,10 +58,7 @@ protected:
 	//Declaración de métodos protegidos virtuales puros, esto indica que estos metodos no pueden se implementados por esta clase.
 	//Dichos metodos solo pueden ser implementados por las Subclases.
 	void Mover(float DeltaTime) PURE_VIRTUAL(AEnemy::Mover, );//Se le pasa el parametro entero DeltaTime para poder calcular el tiempo entre fotogramas.
-	void Disparar() PURE_VIRTUAL(AEnemy::Disparar, );
-	void Velocidad() PURE_VIRTUAL(AEnemy::Velocidad, );
-	void Vida() PURE_VIRTUAL(AEnemy::Vida, );
-	void Apariencia() PURE_VIRTUAL(AEnemy::Apariencia, );
+	void Ataque();
 	void Destruir() PURE_VIRTUAL(AEnemy::Destruir, );
 public:
 	virtual void TReset_Proj();//Metodo virtual que se encarga de reiniciar el disparo.
@@ -78,4 +66,6 @@ public:
 	void CambiarEstrategia(AActor* _Estrategia);
 protected:
 	IStrategy* Strategy;
+protected:
+	virtual void ModAttack() PURE_VIRTUAL(AEnemy::ModAttack, );
 };

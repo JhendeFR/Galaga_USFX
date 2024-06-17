@@ -17,33 +17,20 @@ void ACazaGen01::Mover(float DeltaTime) {
 		Strategy->MovimientoLog(this, DeltaTime);
 	}
 }
-void ACazaGen01::Ataque() {
-	//Posicion de spawn del proyectil.
-	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f) + (GetActorForwardVector() * 1);
-
-	if (ActDisp == true)
-	{
-		UWorld* World = GetWorld();
-		if (World)
-		{
-			AProjEnemy* NewProj = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
-		}
-		//Activa el temporizador para el siguiente disparo.
-		World->GetTimerManager().SetTimer(Timer_fin, this, &AEnemy::TReset_Proj, cadencia);
-		ActDisp = false; //Desactiva el disparo para que no se dispare continuamente.
-	}
-}
-void ACazaGen01::Vida() {
-
-}
-void ACazaGen01::Bombardear() {
-
-}
-void ACazaGen01::Escudo() {
-
-}
 void ACazaGen01::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 	Mover(DeltaTime);
 	Ataque();
+}
+
+void ACazaGen01::ModAttack()
+{
+	FVector SpawnPLocation = GetActorLocation() + FVector(0.0f, 0.0f, 60.0f) + (GetActorForwardVector() * 1);
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		AProjEnemy* NewProj1 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator::ZeroRotator);
+		AProjEnemy* NewProj2 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(0.0f, 45.0f, 0.0f));
+		AProjEnemy* NewProj3 = World->SpawnActor<AProjEnemy>(SpawnPLocation, FRotator(0.0f, -45.0f, 0.0f));
+	}
 }

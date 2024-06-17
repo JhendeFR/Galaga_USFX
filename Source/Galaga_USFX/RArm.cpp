@@ -2,6 +2,9 @@
 
 
 #include "RArm.h"
+#include "Galaga_USFXPawn.h"
+#include "Engine/World.h"
+#include "TimerManager.h"
 
 // Sets default values
 ARArm::ARArm()
@@ -28,5 +31,23 @@ void ARArm::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void ARArm::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
+{
+	AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
+	if (Jugador) {
+		Destroy();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Donde estas??");
+		Jugador->Estados("Invisible");
+		Jugador->PawnInvisibiliando();
+
+		FTimerHandle TimerHandle;
+		GetWorld()->GetTimerManager().SetTimer(TimerHandle, [Jugador]() {
+			Jugador->Estados("Normal");
+			Jugador->PawnNormal();
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Volviste a la normalidad");
+			}, 6.0f, false);
+	}
 }
 

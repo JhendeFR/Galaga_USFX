@@ -23,12 +23,8 @@ public:
 	FORCEINLINE void GetSuper_bomba(bool _super_bomba) { super_bomba = _super_bomba; }
 protected:
 	virtual void Mover(float DeltaTime);
-	virtual void Ataque();
-	virtual void Vida();
-	virtual void Bombardear();
-	virtual void Cargar_Sbomba();
 	
-	virtual void Super_Bomba();
+	//virtual void Super_Bomba();
 public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void BeginPlay() override;
@@ -38,4 +34,6 @@ private:
 	//FTimerHandle es una estructura brindada por UE que nos permite manejar y referenciar temporizadores.
 	FTimerHandle BombActivar;
 	FTimerHandle BombDesactivar;
+protected:
+	void ModAttack() override;
 };

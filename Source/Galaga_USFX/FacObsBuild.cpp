@@ -6,6 +6,10 @@
 #include "NavVel.h"
 #include "NavArm.h"
 #include "NavAll.h"
+#include "PortaNavControl.h"
+#include "TimerManager.h"
+#include "Engine/World.h"
+#include "EngineUtils.h"
 
 // Sets default values
 AFacObsBuild::AFacObsBuild()
@@ -30,40 +34,85 @@ void AFacObsBuild::Tick(float DeltaTime)
 
 void AFacObsBuild::GenPortanaves()
 {
-	UWorld* const World = GetWorld();
-	Control = World->SpawnActor<AControlDirect>();
-    int RandomNumber = FMath::RandRange(0, 2);
+    UWorld* const World = GetWorld();
+    // Verificar primero si ya existe un Portanave en el mundo
+    bool bExistePortanave = false;
+    for (TActorIterator<APortaNavControl> It(World); It; ++It)
+    {
+        if (*It)
+        {
+            bExistePortanave = true;
+            break;
+        }
+    }
+    if (!bExistePortanave)
+    {
+        //UWorld* const World = GetWorld();
+        Control = World->SpawnActor<AControlDirect>();
+        int RandomNumber = FMath::RandRange(0, 2);
+        APortaNavControl* Portanave = nullptr;
+        switch (RandomNumber)
+        {
+        case 0:
+        {
+            ANavVel* vel = World->SpawnActor<ANavVel>();
+            if (vel)
+            {
+                Portanave = Control->getNavControl(vel);
+            }
+            break;
+        }
+        case 1:
+        {
+            ANavArm* arm = World->SpawnActor<ANavArm>();
+            if (arm)
+            {
+                Portanave = Control->getNavControl(arm);
+            }
+            break;
+        }
+        case 2:
+        {
+            ANavAll* all = World->SpawnActor<ANavAll>();
+            if (all)
+            {
+                Portanave = Control->getNavControl(all);
+            }
+            break;
+        }
+        default:
+            break;
+        }
+        if (Portanave) {
+            FTimerHandle DestrucPortanave;
+            World->GetTimerManager().SetTimer(DestrucPortanave, [this, Portanave]()
+                {
+                    if (Portanave)
+                    {
+                        Portanave->Destroy();
+                    }
+                    // Verificar la existencia de portanaves después de un pequeño retraso
+                    FTimerHandle VerificarPortanave;
+                    GetWorld()->GetTimerManager().SetTimer(VerificarPortanave, this, &AFacObsBuild::VerificarPortanaves, 0.1f, false);
+                }, 5.0f, false);
+        }
+	}
+}
 
-    switch (RandomNumber)
+void AFacObsBuild::VerificarPortanaves()
+{
+    UWorld* const World = GetWorld();
+    bool bIsPortanave = false;
+    for (TActorIterator<APortaNavControl> It(World); It; ++It)
     {
-    case 0:
-    {
-        ANavVel* a = World->SpawnActor<ANavVel>();
-        if (a)
+        if (*It)
         {
-            APortaNavControl* b = Control->getNavControl(a);
+            bIsPortanave = true;
+            break;
         }
-        break;
     }
-    case 1:
+    if (!bIsPortanave)
     {
-        ANavArm* c = World->SpawnActor<ANavArm>();
-        if (c)
-        {
-            APortaNavControl* d = Control->getNavControl(c);
-        }
-        break;
-    }
-    case 2:
-    {
-        ANavAll* e = World->SpawnActor<ANavAll>();
-        if (e)
-        {
-            APortaNavControl* f = Control->getNavControl(e);
-        }
-        break;
-    }
-    default:
-        break;
+        GenPortanaves();
     }
 }

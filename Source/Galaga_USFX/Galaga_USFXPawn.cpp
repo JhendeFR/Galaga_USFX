@@ -201,34 +201,6 @@ void AGalaga_USFXPawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPr
 			});
 		GetWorld()->GetTimerManager().SetTimer(TimerEsc, TimerDel2, 0.1f, false);
 	}
-	ARVel* reabvel = Cast<ARVel>(Other);
-	ARArm* reabarm = Cast<ARArm>(Other);
-	ARAll* reaball = Cast<ARAll>(Other);
-	APortanave* portanave = Cast<APortanave>(Other);
-	if (reabvel != nullptr) {
-		reabvel->Destroy();
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Eres lento ;C");
-		Jugador->Estados("Lento");
-		Jugador->PawnLenteado();
-
-		//Observador->Notificar();
-	}
-	if (reabarm != nullptr) {
-		reabarm->Destroy();
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Donde estas??");
-		Jugador->Estados("Invisible");
-		Jugador->PawnInvisibiliando();
-
-		//Observador->Notificar();
-	}
-	if (reaball != nullptr) {
-		reaball->Destroy();
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Eres invencible!!!");
-		Jugador->Estados("Invencible");
-		Jugador->PawnInvenciblepapidios();
-
-		//Observador->Notificar();
-	}
 
 	AProjEnemy* proj = Cast<AProjEnemy>(Other);
 	if (proj != nullptr) {
