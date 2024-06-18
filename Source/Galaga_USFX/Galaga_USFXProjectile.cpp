@@ -15,6 +15,7 @@
 #include "TranspGen01.h"
 #include "TranspGen02.h"
 #include "NaveNodriza.h"
+#include "Bomb.h"
 #include "ControlEscuadFacade.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "UObject/ConstructorHelpers.h"
@@ -64,6 +65,11 @@ void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 
 void AGalaga_USFXProjectile::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
+	if (Other->IsA(ABomb::StaticClass())) {
+		// Si es un proyectil enemigo, no hacer nada y simplemente destruir este proyectil
+		Destroy();
+		return;
+	}
 	AControlEscuadFacade* Escuadrones = nullptr;
 	for (TActorIterator<AControlEscuadFacade> It(GetWorld()); It; ++It)
 	{
@@ -80,59 +86,5 @@ void AGalaga_USFXProjectile::NotifyHit(UPrimitiveComponent* MyComp, AActor* Othe
 			Escuadrones->NaveDestruida(Enemy);
 		}
 	}
-	/*AControlEscuadFacade* Escuadrones = GetWorld()->SpawnActor<AControlEscuadFacade>(AControlEscuadFacade::StaticClass());
-
-	ANaveCaza* navecaza = Cast<ANaveCaza>(Other);
-	ACazaGen01* cazagen1 = Cast<ACazaGen01>(Other);
-	ACazaGen02* cazagen2 = Cast<ACazaGen02>(Other);
-	ANaveEspia* naveespia = Cast<ANaveEspia>(Other);
-	AEspiaGen01* espiagen1 = Cast<AEspiaGen01>(Other);
-	AEspiaGen02* espiagen2 = Cast<AEspiaGen02>(Other);
-	ANaveReab* navereab = Cast<ANaveReab>(Other);
-	AReabGen01* reabgen1 = Cast<AReabGen01>(Other);
-	AReabGen02* reabgen2 = Cast<AReabGen02>(Other);
-	ANaveTransp* navetransp = Cast<ANaveTransp>(Other);
-	ATranspGen01* transpgen1 = Cast<ATranspGen01>(Other);
-	ATranspGen02* transpgen2 = Cast<ATranspGen02>(Other);
-	ANaveNodriza* nodriza = Cast<ANaveNodriza>(Other);
-	if (navecaza != nullptr) {
-		navecaza->Destroy();
-	}
-	if (cazagen1 != nullptr) {
-		cazagen1->Destroy();
-	}
-	if (cazagen2 != nullptr) {
-		cazagen2->Destroy();
-	}
-	if (naveespia != nullptr) {
-		naveespia->Destroy();
-	}
-	if (espiagen1 != nullptr) {
-		espiagen1->Destroy();
-	}
-	if (espiagen2 != nullptr) {
-		espiagen2->Destroy();
-	}
-	if (navereab != nullptr) {
-		navereab->Destroy();
-	}
-	if (reabgen1 != nullptr) {
-		reabgen1->Destroy();
-	}
-	if (reabgen2 != nullptr) {
-		reabgen2->Destroy();
-	}
-	if (navetransp != nullptr) {
-		navetransp->Destroy();
-	}
-	if (transpgen1 != nullptr){
-		transpgen1->Destroy();
-	}
-	if (transpgen2 != nullptr) {
-		transpgen2->Destroy();
-	}
-	if (nodriza != nullptr) {
-		nodriza->Destroy();
-	}*/
-	
+	Destroy();
 }

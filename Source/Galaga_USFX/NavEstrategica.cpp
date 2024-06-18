@@ -86,3 +86,13 @@ void ANavEstrategica::EstrategiaDefensiva()
 	AplicarEstrategia(deltatime);
 	EstrategiaDef->Destroy();
 }
+
+AActor* ANavEstrategica::Clonar()
+{
+	ANavEstrategica* Clon = GetWorld()->SpawnActor<ANavEstrategica>(ANavEstrategica::StaticClass());
+	Clon->SetActorLocation(GetActorLocation() + FVector(0.0f, 500.0f, 0.0f));
+	Clon->SetActorRotation(GetActorRotation());
+	Clon->SetActorScale3D(FVector(0.50f, 0.50f, 0.50f));
+
+	return Clon;
+}

@@ -31,6 +31,7 @@ public:
 	float time;
 private:
 	class ANavEstrategica* NaveEstrategica;
+	class ANavEstrategica* EstrategicaClon;
 
 	class AStrEstandar* EstNavEstandar;
 	class AStrIntimidacion* EstNavIntimidacion;

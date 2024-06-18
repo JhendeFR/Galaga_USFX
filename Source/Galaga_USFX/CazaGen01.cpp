@@ -6,9 +6,9 @@
 #include "Kismet/GameplayStatics.h"
 
 ACazaGen01::ACazaGen01() {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel2.EnemyLevel2'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel3.EnemyLevel3'"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
-	SetActorRelativeScale3D(FVector(1.5f, 1.5f, 1.5f));
+	SetActorRelativeScale3D(FVector(1.5f, 1.5f, 2.5f));
 	ActDisp = true;
 	cadencia = 2.0f;
 }

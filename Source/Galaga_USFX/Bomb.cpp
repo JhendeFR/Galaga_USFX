@@ -3,6 +3,7 @@
 
 #include "Bomb.h"
 #include "Galaga_USFXPawn.h"
+#include "Galaga_USFXProjectile.h"
 
 // Sets default values
 ABomb::ABomb()
@@ -42,6 +43,12 @@ void ABomb::Mover()
 
 void ABomb::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
+	// Verificar si el otro actor es un proyectil del jugador
+	if (Other->IsA(AGalaga_USFXProjectile::StaticClass())) {
+		// Si es un proyectil del jugador, no hacer nada y simplemente destruir este proyectil
+		Destroy();
+		return;
+	}
 	AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	if (Jugador) {
 		Destroy();
@@ -51,5 +58,6 @@ void ABomb::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComp
 			Jugador->Destroy();
 		}
 	}
+	Destroy();
 }
 

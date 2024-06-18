@@ -7,9 +7,9 @@
 #include "Bomb.h"
 
 ACazaGen02::ACazaGen02() {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Nodriza1.Nodriza1'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/EnemyLevel4.EnemyLevel4'"));
 	EnemyMesh->SetStaticMesh(ShipMesh.Object);
-	SetActorRelativeScale3D(FVector(0.40f, 0.40f, 0.40f));
+	SetActorRelativeScale3D(FVector(1.5f, 1.5f, 2.5f));
 	ActDisp = true;
 	cadencia = 2.0f;
 	BombDist = 100.0f;

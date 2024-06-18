@@ -28,6 +28,11 @@ C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Po
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\PortaNavControl.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavControlInt.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ControlDirect.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Enemy.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Enemy.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Enemy.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Strategy.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Strategy.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/EscudoM.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\EscudoM.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\EscudoM.generated.h
@@ -36,81 +41,98 @@ C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Es
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/EstPawnInvencible.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/EstPawnInvisible.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/EstPawnLento.cpp
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Galaga_USFX.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Galaga_USFX.h
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NavAll.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavAll.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/FacObsBuild.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavVel.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Portanave.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Portanave.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\RVel.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\RVel.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavVel.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavArm.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\RArm.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\RArm.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavArm.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavAll.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\RAll.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\RAll.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavAll.generated.h
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NavArm.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavArm.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavArm.generated.h
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NavControlInt.cpp
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NaveReab.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveReab.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Enemy.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Enemy.generated.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Strategy.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Strategy.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\EngineUtils.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Galaga_USFX.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Galaga_USFX.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Galaga_USFXPawn.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Galaga_USFXProjectile.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Galaga_USFXProjectile.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Camera/CameraComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CameraComponent.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/SpringArmComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SpringArmComponent.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Power_Up.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Power_Up.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Power_Speed.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Power_Speed.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Power_Shield.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Power_Shield.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\ProjEnemy.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjEnemy.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NavAll.cpp
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NavArm.cpp
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NavControlInt.cpp
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NaveCaza.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveCaza.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveCaza.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NaveEspia.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveEspia.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEspia.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NaveNodriza.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveNodriza.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Observer.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Observer.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveNodriza.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\StrIntimidacion.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavEstrategica.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Prototype.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Prototype.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavEstrategica.generated.h
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\StrIntimidacion.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NaveReab.cpp
+C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveReab.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveReab.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NaveTransp.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NaveTransp.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveTransp.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/NavVel.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavVel.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavVel.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/ObservadorNotify.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Observer.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Observer.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Observer.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/PortaNavControl.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Portanave.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Power_Shield.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Power_Shield.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Power_Up.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Power_Up.generated.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Power_Shield.generated.h
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Power_Speed.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\Power_Speed.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Power_Speed.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Power_Up.cpp
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/PowerUpFactory.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\PowerUpFactory.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\PowerUpFactory.generated.h
-C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/ProjEnemy.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\ProjEnemy.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ProjEnemy.generated.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/ProjectileMovementComponent.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/RAll.cpp
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/RArm.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/ReabGen01.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\ReabGen01.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ReabGen01.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/ReabGen02.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\ReabGen02.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\ReabGen02.generated.h
+C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/RVel.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/Strategy.cpp
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/StrDefensiva.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\StrDefensiva.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\NavEstrategica.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NavEstrategica.generated.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\StrDefensiva.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/StrEstandar.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\StrEstandar.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\StrEstandar.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/StrIntimidacion.cpp
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\StrIntimidacion.h
-C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\StrIntimidacion.generated.h
 C:/Users/jhean/Documents/Programacion Avanzada/Galaga_USFX/Source/Galaga_USFX/TranspGen01.cpp
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Source\Galaga_USFX\TranspGen01.h
 C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\TranspGen01.generated.h

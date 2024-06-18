@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Galaga_USFX-0377.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\ControlEscuadFacade.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Galaga_USFXGameMode.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Galaga_USFXProjectile.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\PowerUpFactory.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Module.Galaga_USFX.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Module.Galaga_USFX.gen.cpp.obj"
+"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Default.rc2.res"
+/OUT:"C:\Users\jhean\Documents\Programacion Avanzada\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\UE4Editor-Galaga_USFX-0377.lib"

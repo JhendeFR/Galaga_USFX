@@ -4,6 +4,8 @@
 #include "PowerUpFactory.h"
 #include "Power_Speed.h"
 #include "Power_Shield.h"
+#include "TimerManager.h"
+#include "Engine/World.h"
 
 // Sets default values
 APowerUpFactory::APowerUpFactory()
@@ -35,8 +37,22 @@ void APowerUpFactory::CrearPower(FString tipo)
 	FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
 	if (tipo == "Speed") {
 		GetWorld()->SpawnActor<APower_Speed>(APower_Speed::StaticClass(), Posicion, Rotacion);
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Power Up generado")));
 	}
 	if (tipo == "Shield") {
 		GetWorld()->SpawnActor<APower_Shield>(APower_Shield::StaticClass(), Posicion, Rotacion);
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Power Up generado")));
 	}
+}
+
+void APowerUpFactory::IniciarSpawnPower()
+{
+	GetWorld()->GetTimerManager().SetTimer(T_SpawnPower, this, &APowerUpFactory::GenPowerAleatorio, 10.0f, true);
+}
+
+void APowerUpFactory::GenPowerAleatorio()
+{
+	int RandomPowerUP = FMath::RandRange(0, 1);
+	FString TipoPowerUp = (RandomPowerUP == 0) ? "Speed" : "Shield";
+	CrearPower(TipoPowerUp);
 }

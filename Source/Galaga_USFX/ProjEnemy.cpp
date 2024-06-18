@@ -39,6 +39,11 @@ void AProjEnemy::OnHit13(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrim
 }
 void AProjEnemy::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
+	if (Other->IsA(AGalaga_USFXProjectile::StaticClass())) {
+		// Si es un proyectil del jugador, no hacer nada y simplemente destruir este proyectil
+		Destroy();
+		return;
+	}
 	AGalaga_USFXPawn* Jugador = Cast<AGalaga_USFXPawn>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	if (Jugador) {
 		Destroy();
@@ -48,6 +53,7 @@ void AProjEnemy::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiv
 			Jugador->Destroy();
 		}
 	}
+
 }
 // Called when the game starts or when spawned
 void AProjEnemy::BeginPlay()

@@ -36,10 +36,18 @@ void AControlEscuadFacade::EscuadEjemploTM()
 	TipoNaves.Add(ANaveCaza::StaticClass());
 	TipoNaves.Add(ACazaGen01::StaticClass());
 	TipoNaves.Add(ACazaGen02::StaticClass());
+	TipoNaves.Add(ANaveEspia::StaticClass());
+	TipoNaves.Add(ACazaGen01::StaticClass());
+	TipoNaves.Add(ACazaGen02::StaticClass());
+	TipoNaves.Add(ANaveNodriza::StaticClass());
 
-	MaxNav.Add(ANaveCaza::StaticClass(), 9);
-	MaxNav.Add(ACazaGen01::StaticClass(), 0);
-	MaxNav.Add(ACazaGen02::StaticClass(), 0);
+	MaxNav.Add(ANaveCaza::StaticClass(), 3);
+	MaxNav.Add(ACazaGen01::StaticClass(), 3);
+	MaxNav.Add(ACazaGen02::StaticClass(), 3);
+	MaxNav.Add(ANaveEspia::StaticClass(), 3);
+	MaxNav.Add(AEspiaGen01::StaticClass(), 3);
+	MaxNav.Add(AEspiaGen02::StaticClass(), 3);
+	MaxNav.Add(ANaveNodriza::StaticClass(), 1);
 	
 
 	UWorld* const World = GetWorld();
@@ -66,7 +74,8 @@ void AControlEscuadFacade::EscuadEjemploTM()
 
 void AControlEscuadFacade::ElegirEstrategia()
 {
-	int RandomNumber = FMath::RandRange(0, 2);
+	//int RandomNumber = FMath::RandRange(0, 2);
+	int RandomNumber = 0;
 	switch (RandomNumber)
 	{
 		case 0:

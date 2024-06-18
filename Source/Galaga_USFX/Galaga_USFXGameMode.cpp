@@ -50,26 +50,30 @@ void AGalaga_USFXGameMode::BeginPlay()
 		Jugador->PawnNormal();
 
 		Escuadrones = GetWorld()->SpawnActor<AControlEscuadFacade>(AControlEscuadFacade::StaticClass());
-		Escuadrones->EscuadEjemploTM();
+		//nave = GetWorld()->SpawnActor<ANaveNodriza>(FVector(0.0f, 0.0f, 150.0f), FRotator(0.0f, 0.0f, 0.0f));
+		//Escuadrones->EscuadEjemploTM();
 		//Escuadrones->ElegirEstrategia();
 		 
-		//Nave para el patron strategy.
-		//NaveEstrategica = GetWorld()->SpawnActor<ANavEstrategica>(FVector(-300.0f, 100.0f, 150.0f), FRotator(0.0f,180.0,0.0));
+		//Nave para el patron strategy/Prototipe.
+		NaveEstrategica = GetWorld()->SpawnActor<ANavEstrategica>(FVector(-300.0f, 100.0f, 150.0f), FRotator(0.0f,180.0,0.0));
+		
+		EstrategicaClon = Cast<ANavEstrategica>(NaveEstrategica->Clonar());
 
 		//Generarmos los power ups.
 		APowerUpFactory* GenPowerUp = World->SpawnActor<APowerUpFactory>();
-		GenPowerUp->CrearPower("Speed");
-		GenPowerUp->CrearPower("Shield");
+		GenPowerUp->IniciarSpawnPower();
+		//GenPowerUp->CrearPower("Speed");
+		//GenPowerUp->CrearPower("Shield");
 
 		Portanaves = GetWorld()->SpawnActor<AFacObsBuild>(AFacObsBuild::StaticClass());
 		GetWorldTimerManager().SetTimer(TimerHandle_GenPortanaves, this, &AGalaga_USFXGameMode::GenPortanavesRepeatedly, 5.0f, true, 5.0f);
-		//Portanaves->GenPortanaves();
 
 		/*sub2 = GetWorld()->SpawnActor<ANaveNodriza>(ANaveNodriza::StaticClass());
 		sub2->SetNavenodriza(Jugador);*/
-		/*EstNavEstandar = GetWorld()->SpawnActor<AStrEstandar>(AStrEstandar::StaticClass());
+
+		EstNavEstandar = GetWorld()->SpawnActor<AStrEstandar>(AStrEstandar::StaticClass());
 		EstNavIntimidacion = GetWorld()->SpawnActor<AStrIntimidacion>(AStrIntimidacion::StaticClass());
-		EstNavDefensiva = GetWorld()->SpawnActor<AStrDefensiva>(AStrDefensiva::StaticClass());*/
+		EstNavDefensiva = GetWorld()->SpawnActor<AStrDefensiva>(AStrDefensiva::StaticClass());
 
 	}
 }
@@ -81,22 +85,31 @@ void AGalaga_USFXGameMode::Tick(float DeltaTime)
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Numero de Enemigos: %d"), NumeroDeEnemigos));
 	time += DeltaTime;
 	EstadoPawn = Jugador->GetEstadoActual();
-	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Tiempo: %f"), time));
-	/*if(time >= 0.0f)
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Tiempo: %f"), time));
+	if(time >= 0.0f)
 	{
 		NaveEstrategica->CambiarEstrategia(EstNavEstandar);
 		NaveEstrategica->AplicarEstrategia(DeltaTime);
+		EstrategicaClon->SetActorEnableCollision(false);
+		EstrategicaClon->SetActorHiddenInGame(true);
 	}
 	if(time >= 15.0f)
 	{
 		NaveEstrategica->CambiarEstrategia(EstNavIntimidacion);
 		NaveEstrategica->AplicarEstrategia(DeltaTime);
+
+		EstrategicaClon->SetActorEnableCollision(true);
+		EstrategicaClon->SetActorHiddenInGame(false);
+		EstrategicaClon->CambiarEstrategia(EstNavIntimidacion);
+		EstrategicaClon->AplicarEstrategia(DeltaTime);
 	}
 	if(time >= 30.0f)
 	{
 		NaveEstrategica->CambiarEstrategia(EstNavDefensiva);
 		NaveEstrategica->AplicarEstrategia(DeltaTime);
-	}*/
+		EstrategicaClon->CambiarEstrategia(EstNavDefensiva);
+		EstrategicaClon->AplicarEstrategia(DeltaTime);
+	}
 
 }
 

@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "Enemy.h"
+#include "Prototype.h"
 #include "NavEstrategica.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class GALAGA_USFX_API ANavEstrategica : public AEnemy
+class GALAGA_USFX_API ANavEstrategica : public AEnemy, public IPrototype
 {
 	GENERATED_BODY()
 	
@@ -42,4 +43,6 @@ public:
 private:
 	class IStrategy* EstrategiaActual;
 	float deltatime;
+public:
+	AActor* Clonar() override;
 };

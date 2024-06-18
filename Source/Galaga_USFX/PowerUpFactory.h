@@ -24,4 +24,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 public:
 	void CrearPower(FString tipo);
+	void IniciarSpawnPower();
+	void GenPowerAleatorio();
+	FTimerHandle T_SpawnPower;
 };

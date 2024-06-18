@@ -5,7 +5,7 @@
 APower_Speed::APower_Speed()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Speed.Speed'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/CapsulePass.CapsulePass'"));
 	Power->SetStaticMesh(ShipMesh.Object);
 	Power->SetWorldScale3D(FVector(2.0f, 2.0f, 2.0f));
 }
